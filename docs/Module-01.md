@@ -67,3 +67,20 @@ Template
 ## Status
 
 Architecture Planning Started.
+## Git Information
+
+### Branch
+
+main
+
+### Repository
+
+dynamic-portfolio
+
+### Commit
+
+Module 00 & 01 - Project Setup and Architecture
+
+### Status
+
+Successfully committed to local Git repository.
