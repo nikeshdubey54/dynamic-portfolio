@@ -1,0 +1,42 @@
+body{
+    background:#f8f9fa;
+}
+
+section{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    scroll-margin-top:80px;
+    padding:80px 0;
+}
+
+.card{
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.rounded-circle{
+    border:8px solid white;
+}
+
+.btn{
+    border-radius:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+h1{
+    line-height:1.2;
+}

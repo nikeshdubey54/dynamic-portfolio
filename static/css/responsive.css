@@ -1,0 +1,19 @@
+/* Responsive CSS */
+
+/* Mobile */
+
+@media(max-width:768px){
+
+}
+
+/* Tablet */
+
+@media(min-width:769px) and (max-width:992px){
+
+}
+
+/* Laptop */
+
+@media(min-width:993px){
+
+}
