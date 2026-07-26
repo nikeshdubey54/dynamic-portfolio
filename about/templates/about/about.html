@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+About | Dynamic Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+
+            <div class="col-lg-4 text-center mb-4">
+
+                {% if about.profile_image %}
+
+                <img src="{{ about.profile_image.url }}"
+                    class="img-fluid rounded-circle shadow"
+                    alt="Profile Image"
+                    width="300">
+
+                {% else %}
+
+                <img src="{% static 'images/profile/default-profile.png' %}"
+                    class="img-fluid rounded-circle shadow"
+                    alt="Profile Image"
+                    width="300">
+
+                {% endif %}
+
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-lg-8">
+
+                <h1 class="fw-bold">
+
+                    {% if about %}
+
+                    {{ about.full_name }}
+
+                    {% else %}
+
+                    No Profile Available
+
+                    {% endif %}
+
+                </h1>
+
+                <h4 class="text-primary">
+
+                    {{ about.designation }}
+
+                </h4>
+
+                <hr>
+
+                <p>
+
+                    {{ about.about_me }}
+
+                </p>
+
+                <div class="row mt-4">
+
+                    <div class="col-md-6">
+
+                        <p><strong>Email :</strong> {{ about.email }} </p>
+
+                        <p><strong>Phone :</strong> {{ about.phone }} </p>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <p><strong>Location :</strong> {{ about.location }}</p>
+
+                        <p><strong>Experience :</strong> Fresher</p>
+
+                    </div>
+
+                </div>
+
+                {% if about.resume %}
+
+                <a href="{{ about.resume.url }}"
+                class="btn btn-primary mt-3"
+                target="_blank">
+
+                Download Resume
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Education Section -->
+        <!-- ========================= -->
+
+        <hr class="my-5">
+
+        <h2 class="mb-4">Education</h2>
+
+        {% for education in educations %}
+
+        <div class="card mb-3 shadow-sm">
+
+            <div class="card-body">
+
+                <h5>{{ education.degree }}</h5>
+
+                <p>{{ education.institute }}</p>
+
+                <small>
+
+                    {{ education.start_year }} -
+                    {{ education.end_year }}
+
+                </small>
+
+                <p class="mt-2">
+
+                    {{ education.description }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Education Added.</p>
+
+        {% endfor %}
+
+
+        <!-- ========================= -->
+        <!-- Experience Section -->
+        <!-- ========================= -->
+
+        <hr class="my-5">
+
+        <h2 class="mb-4">Experience</h2>
+
+        {% for experience in experiences %}
+
+        <div class="card mb-3 shadow-sm">
+
+            <div class="card-body">
+
+                <h5>
+
+                    {{ experience.company }}
+
+                </h5>
+
+                <h6>
+
+                    {{ experience.designation }}
+
+                </h6>
+
+                <small>
+
+                    {{ experience.start_date }}
+
+                    -
+
+                    {{ experience.end_date }}
+
+                </small>
+
+                <p class="mt-2">
+
+                    {{ experience.description }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Experience Added.</p>
+
+        {% endfor %}
+
+        
+
+        <!-- ========================= -->
+        <!-- Experience Section -->
+        <!-- ========================= -->
+
+        <hr class="my-5">
+
+        <h2 class="mb-4">
+
+            Certifications
+
+        </h2>
+
+        {% for certification in certifications %}
+
+        <div class="card mb-3 shadow-sm">
+
+            <div class="card-body">
+
+                <h5>
+
+                    {{ certification.title }}
+
+                </h5>
+
+                <p>
+
+                    {{ certification.organization }}
+
+                </p>
+
+                <small>
+
+                    {{ certification.issue_date }}
+
+                </small>
+
+                {% if certification.certificate_url %}
+
+                <br><br>
+
+                <a href="{{ certification.certificate_url }}"
+
+                target="_blank"
+
+                class="btn btn-outline-primary btn-sm">
+
+                    View Certificate
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Certifications Added.</p>
+
+        {% endfor %}
+
+        <!-- ========================= -->
+        <!-- Experience Section -->
+        <!-- ========================= -->
+         
+        <hr class="my-5">
+
+        <h2>
+
+        Achievements
+
+        </h2>
+
+        {% for achievement in achievements %}
+
+        <div class="card mb-3 shadow-sm">
+
+        <div class="card-body">
+
+        <h5>
+
+        {{ achievement.title }}
+
+        </h5>
+
+        <small>
+
+        {{ achievement.achievement_date }}
+
+        </small>
+
+        <p class="mt-2">
+
+        {{ achievement.description }}
+
+        </p>
+
+        </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>
+
+        No Achievements Added.
+
+        </p>
+
+        {% endfor %}
+
+        
+    </div>
+
+</section>
+
+{% endblock %}

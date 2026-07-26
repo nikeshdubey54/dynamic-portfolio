@@ -1292,3 +1292,68 @@ Q3. Why test responsive behavior during development?
 
 Answer:
 A responsive layout ensures the application works correctly on desktops, tablets, and mobile devices, providing a consistent user experience.
+
+---
+
+# Git Information
+
+Commit Message
+
+Module 03 - Home Page Development Completed
+
+Branch
+
+main
+
+Repository
+
+dynamic-portfolio
+
+Status
+
+Successfully pushed to GitHub
+
+---
+
+# Interview Preparation
+
+### Explain Module 03
+
+Module 03 focused on developing the Home page of the Dynamic Portfolio CMS.
+
+Major work completed:
+
+- Home App Creation
+- URL Configuration
+- Base Template
+- Navbar
+- Footer
+- Hero Section
+- About Preview
+- Skills Preview
+- Featured Projects
+- Contact CTA
+- Static Asset Integration
+- Modular Template Architecture
+
+This module established the frontend foundation for the project.
+
+### 🎤 Interview Questions
+Q1. What was the purpose of Module 03?
+
+Answer:
+Module 03 established the frontend foundation of the application by creating a modular and responsive Home page using reusable Django templates.
+
+Q2. Why did you split the Home page into multiple template files?
+
+Answer:
+Separating the Home page into reusable templates improves readability, maintainability, and scalability. Each section can be modified independently without affecting the rest of the page.
+
+Q3. Which Django template features did you use?
+
+Answer:
+
+Template inheritance (extends)
+Reusable templates (include)
+Block tags (block, endblock)
+Static files (load static)
