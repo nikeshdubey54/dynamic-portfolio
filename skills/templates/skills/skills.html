@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Skills | Dynamic Portfolio
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-5">
+        My Skills
+    </h1>
+
+    <!-- Frontend -->
+
+    <h3 class="mb-3">Frontend</h3>
+
+    <div class="row mb-5">
+
+        {% for skill in frontend_skills %}
+
+        <div class="col-md-6 mb-3">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h5>{{ skill.name }}</h5>
+
+                    <div class="progress mt-3">
+
+                        <div class="progress-bar"
+                             style="width: {{ skill.proficiency }}%;">
+
+                            {{ skill.proficiency }}%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Frontend Skills Added.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- Backend -->
+
+    <h3 class="mb-3">Backend</h3>
+
+    <div class="row mb-5">
+
+        {% for skill in backend_skills %}
+
+        <div class="col-md-6 mb-3">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h5>{{ skill.name }}</h5>
+
+                    <div class="progress mt-3">
+
+                        <div class="progress-bar"
+                             style="width: {{ skill.proficiency }}%;">
+
+                            {{ skill.proficiency }}%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Backend Skills Added.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- Database -->
+
+    <h3 class="mb-3">Database</h3>
+
+    <div class="row mb-5">
+
+        {% for skill in database_skills %}
+
+        <div class="col-md-6 mb-3">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h5>{{ skill.name }}</h5>
+
+                    <div class="progress mt-3">
+
+                        <div class="progress-bar"
+                             style="width: {{ skill.proficiency }}%;">
+
+                            {{ skill.proficiency }}%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No Database Skills Added.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
