@@ -299,3 +299,12 @@ Update
 Delete
 
 These are the four basic database operations.
+
+🎤 Interview Questions
+Q1. Why should documentation be updated after every module?
+
+Answer: Documentation records the design, implementation, and testing details, making the project easier to maintain and explain during interviews.
+
+Q2. Why do we commit after completing a module instead of after every small change?
+
+Answer: A module-level commit creates meaningful milestones in Git history, making it easier to review, revert, and understand project progress.

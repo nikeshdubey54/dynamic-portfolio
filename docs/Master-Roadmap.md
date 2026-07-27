@@ -168,3 +168,26 @@ Create a fully dynamic portfolio website where every section is manageable throu
 # Interview Preparation
 
 (To be documented)
+
+
+
+
+## Module 05 Complete
+        ↓
+Module 06 Complete
+        ↓
+🎨 UI Enhancement Pass (Modules 03–06)
+        ↓
+Module 07 Start
+        ↓
+Module 08
+        ↓
+Module 09
+        ↓
+...
+        ↓
+Module 15
+        ↓
+🚀 Production Optimization
+        ↓
+Deployment
