@@ -1,16 +1,50 @@
 /* Responsive CSS */
 
-/* Mobile */
+/* ==========================
+        Mobile (≤768px)
+========================== */
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline{
+
+        width:100%;
+
+    }
 
 }
 
-/* Tablet */
+/* ==========================
+        Tablet (≤991px)
+========================== */
 
-@media(min-width:769px) and (max-width:992px){
+@media (max-width:991px){
+
+    .navbar-nav{
+
+        margin-top:20px;
+
+        text-align:center;
+
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+
+        margin:10px 0;
+
+        padding:10px;
+
+    }
 
 }
+
 
 /* Laptop */
 

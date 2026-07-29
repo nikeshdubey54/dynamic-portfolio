@@ -1,3 +1,8 @@
+html{
+
+    scroll-behavior:smooth;
+
+}
 body{
     background:#f8f9fa;
 }
@@ -24,8 +29,10 @@ section{
     transform:translateY(-8px);
 }
 
-.rounded-circle{
-    border:8px solid white;
+.hero-profile-img{
+
+    border:6px solid #ffffff;
+
 }
 
 .btn{
@@ -39,4 +46,633 @@ section{
 
 h1{
     line-height:1.2;
+}
+
+/* ==========================
+        Navbar
+========================== */
+
+.navbar{
+
+    padding:16px 0;
+
+    transition:all .3s ease;
+
+}
+
+
+
+.navbar-brand:hover{
+
+    transform:scale(1.02);
+
+}
+
+.navbar-brand:hover .brand-text{
+
+    color:#0d6efd;
+
+}
+
+.navbar-dark .navbar-nav .nav-link{
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    margin-left:18px;
+
+    padding:8px 0;
+
+    position:relative;
+
+    transition:all .3s ease;
+
+}
+
+/* Hover Effect */
+
+.navbar-dark .navbar-nav .nav-link:hover{
+
+    color:#0d6efd !important;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Active Link */
+
+.navbar-dark .navbar-nav .nav-link.active{
+
+    color:#0d6efd !important;
+
+    font-weight:700;
+
+}
+
+
+/* Underline Animation */
+
+.navbar-dark .navbar-nav .nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0;
+
+    height:2px;
+
+    background:#0d6efd;
+
+    transition:.3s ease;
+
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+
+.navbar-dark .navbar-nav .nav-link.active::after{
+
+    width:100%;
+
+}
+
+/* Brand Text */
+
+.brand-text{
+
+    letter-spacing:.5px;
+
+    transition:.3s ease;
+
+}
+
+.navbar-brand span:first-child{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/* Brand Hover */
+
+.navbar-brand{
+
+    font-weight:700;
+    letter-spacing:.5px;
+    transition:.3s ease;
+    cursor:pointer;
+
+}
+
+
+
+
+.navbar-collapse{
+
+    transition:.35s ease;
+
+}
+
+.navbar-toggler{
+
+    transition:.3s ease;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}
+
+::selection{
+
+    background:#0d6efd;
+
+    color:#ffffff;
+
+}
+
+/* ==========================
+        Hero Section
+========================== */
+
+.hero-section{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#f8f9fa 0%,#eef5ff 100%);
+
+}
+
+.hero-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:#0d6efd;
+
+    opacity:.15;
+
+    border-radius:50%;
+
+    top:-150px;
+
+    left:-150px;
+
+    filter:blur(120px);
+
+}
+
+.hero-section .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================
+      Hero Typography
+========================== */
+
+.hero-badge{
+
+    font-size:.85rem;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    letter-spacing:.5px;
+
+}
+
+.hero-title{
+
+    font-size:3.8rem;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+}
+
+.hero-subtitle{
+
+    font-weight:500;
+
+    color:#6c757d !important;
+
+    margin-bottom:25px;
+
+}
+
+.hero-text{
+
+    color:#555;
+
+    line-height:1.8;
+
+    max-width:600px;
+
+}
+
+/* ==========================
+        Hero Buttons
+========================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+}
+
+/* ==========================
+        Hero Profile Card
+========================== */
+
+.hero-card{
+
+    border-radius:24px;
+
+    transition:all .35s ease;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+}
+
+.hero-card hr{
+
+    margin:25px 0;
+
+}
+
+.hero-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+}
+
+.hero-profile-img{
+
+    width:250px;
+
+    height:250px;
+
+    object-fit:cover;
+
+    border:6px solid #ffffff;
+
+    transition:all .35s ease;
+
+}
+
+.hero-card:hover .hero-profile-img{
+
+    transform:scale(1.04);
+
+}
+
+.hero-card-title{
+
+    margin-bottom:10px;
+
+}
+
+.hero-card-subtitle{
+
+    margin-bottom:20px;
+
+}
+
+.hero-social-links .btn{
+
+    min-width:100px;
+
+}
+
+.hero-social-links{
+
+    margin-top:10px;
+
+}
+
+.hero-btn-primary,
+.hero-btn-outline{
+
+    min-width:200px;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.hero-btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(13,110,253,.25);
+
+}
+
+.hero-btn-outline:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.hero-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+
+    height:380px;
+
+    background:#7c3aed;
+
+    opacity:.12;
+
+    border-radius:50%;
+
+    bottom:-150px;
+
+    right:-120px;
+
+    filter:blur(120px);
+
+}
+
+.hero-counter{
+
+    font-weight:700;
+
+}
+
+/* ==========================
+        About Section
+========================== */
+
+.about-section{
+
+    background:#ffffff;
+
+}
+
+.about-container{
+
+    position:relative;
+
+}
+
+.about-title{
+
+    margin-bottom:12px;
+
+    font-size:2.8rem;
+
+}
+
+.about-subtitle{
+
+    margin-bottom:20px;
+
+    font-weight:500;
+
+}
+
+/* ==========================
+        About Profile
+========================== */
+
+.about-profile-img{
+
+    width:320px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border:8px solid #ffffff;
+
+    border-radius:50%;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    transition:all .35s ease;
+
+}
+
+.about-profile-img:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 28px 60px rgba(13,110,253,.18);
+
+}
+
+/* ==========================
+        About Typography
+========================== */
+
+.about-title{
+
+    font-size:3rem;
+
+    line-height:1.2;
+
+    margin-bottom:12px;
+
+}
+
+.about-designation{
+
+    font-size:1.5rem;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.about-description{
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+    color:#555;
+
+    max-width:700px;
+
+}
+
+/* ==========================
+        About Info Cards
+========================== */
+
+.about-info-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    border:1px solid rgba(0,0,0,.06);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    transition:all .35s ease;
+
+    height:100%;
+
+}
+
+.about-info-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(13,110,253,.12);
+
+}
+
+.about-info-card h6{
+
+    color:#0d6efd;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.about-info-card p{
+
+    margin:0;
+
+    color:#555;
+
+    font-size:1rem;
+
+    word-break:break-word;
+
+}
+
+/* ==========================
+        About Timeline Cards
+========================== */
+
+.section-title{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:30px;
+
+    color:#212529;
+
+}
+
+.about-card{
+
+    border-radius:20px;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(13,110,253,.12);
+
+}
+
+.about-card .card-body{
+
+    padding:28px;
+
+}
+
+.about-card h5{
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.about-card h6{
+
+    color:#0d6efd;
+
+    font-weight:600;
+
+}
+
+.about-card small{
+
+    color:#6c757d;
+
+}
+
+.about-card p{
+
+    margin-top:12px;
+
+    color:#555;
+
+    line-height:1.8;
+
 }

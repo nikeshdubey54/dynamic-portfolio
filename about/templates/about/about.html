@@ -8,20 +8,20 @@ About | Dynamic Portfolio
 
 {% block content %}
 
-<section class="py-5">
+<section class="about-section py-5">
 
-    <div class="container">
+    <div class="container about-container">
 
-        <div class="row align-items-center">
+        <div class="row align-items-center gy-5">
 
             <!-- Left Side -->
 
-            <div class="col-lg-4 text-center mb-4">
+            <div class="col-lg-4 text-center d-flex justify-content-center">
 
                 {% if about.profile_image %}
 
                 <img src="{{ about.profile_image.url }}"
-                    class="img-fluid rounded-circle shadow"
+                    class="about-profile-img img-fluid rounded-circle"
                     alt="Profile Image"
                     width="300">
 
@@ -39,9 +39,9 @@ About | Dynamic Portfolio
 
             <!-- Right Side -->
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 ps-lg-5">
 
-                <h1 class="fw-bold">
+                <h1 class="about-title fw-bold">
 
                     {% if about %}
 
@@ -55,7 +55,7 @@ About | Dynamic Portfolio
 
                 </h1>
 
-                <h4 class="text-primary">
+                <h4 class="about-designation text-primary">
 
                     {{ about.designation }}
 
@@ -63,36 +63,67 @@ About | Dynamic Portfolio
 
                 <hr>
 
-                <p>
+                <p class="about-description">
 
                     {{ about.about_me }}
 
                 </p>
 
-                <div class="row mt-4">
+                <div class="row mt-5 g-4">
 
                     <div class="col-md-6">
 
-                        <p><strong>Email :</strong> {{ about.email }} </p>
+                        <div class="about-info-card">
 
-                        <p><strong>Phone :</strong> {{ about.phone }} </p>
+                            <h6>Email</h6>
+
+                            <p>{{ about.email }}</p>
+
+                        </div>
 
                     </div>
 
                     <div class="col-md-6">
 
-                        <p><strong>Location :</strong> {{ about.location }}</p>
+                        <div class="about-info-card">
 
-                        <p><strong>Experience :</strong> Fresher</p>
+                            <h6>Phone</h6>
+
+                            <p>{{ about.phone }}</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="about-info-card">
+
+                            <h6>Location</h6>
+
+                            <p>{{ about.location }}</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="about-info-card">
+
+                            <h6>Experience</h6>
+
+                            <p>Fresher</p>
+
+                        </div>
 
                     </div>
 
                 </div>
-
                 {% if about.resume %}
 
                 <a href="{{ about.resume.url }}"
-                class="btn btn-primary mt-3"
+                class="btn btn-primary hero-btn-primary mt-3"
                 target="_blank">
 
                 Download Resume
@@ -111,11 +142,13 @@ About | Dynamic Portfolio
 
         <hr class="my-5">
 
-        <h2 class="mb-4">Education</h2>
+        <h2 class="section-title mb-4">
+            Education
+        </h2>
 
         {% for education in educations %}
 
-        <div class="card mb-3 shadow-sm">
+        <div class="card about-card border-0 mb-4">
 
             <div class="card-body">
 
@@ -153,11 +186,13 @@ About | Dynamic Portfolio
 
         <hr class="my-5">
 
-        <h2 class="mb-4">Experience</h2>
+        <h2 class="section-title mb-4">
+            Experience
+        </h2>
 
         {% for experience in experiences %}
 
-        <div class="card mb-3 shadow-sm">
+        <div class="card about-card border-0 mb-4">
 
             <div class="card-body">
 
@@ -207,15 +242,13 @@ About | Dynamic Portfolio
 
         <hr class="my-5">
 
-        <h2 class="mb-4">
-
+        <h2 class="section-title mb-4">
             Certifications
-
         </h2>
 
         {% for certification in certifications %}
 
-        <div class="card mb-3 shadow-sm">
+        <div class="card about-card border-0 mb-4">
 
             <div class="card-body">
 
@@ -269,15 +302,13 @@ About | Dynamic Portfolio
          
         <hr class="my-5">
 
-        <h2>
-
-        Achievements
-
+        <h2 class="section-title mb-4">
+            Achievements
         </h2>
 
         {% for achievement in achievements %}
 
-        <div class="card mb-3 shadow-sm">
+        <div class="card about-card border-0 mb-4">
 
         <div class="card-body">
 

@@ -510,3 +510,27 @@ Projects Module completed successfully.
 Status:
 
 ✅ Module Completed
+
+Q1. Why did you create a separate Projects app?
+
+Answer:
+
+To keep the project modular, reusable, and easier to maintain. Each app handles a single responsibility.
+
+Q2. Why did you create a Project Detail page?
+
+Answer:
+
+To keep the Projects listing page clean while allowing users to view complete information about individual projects.
+
+Q3. Why do we use featured=True?
+
+Answer:
+
+It helps highlight important projects separately, improving the portfolio presentation.
+
+Q4. Why use get_object_or_404() instead of Project.objects.get()?
+
+Answer:
+
+get_object_or_404() automatically returns a 404 page if the object doesn't exist, avoiding unhandled exceptions.

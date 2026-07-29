@@ -101,10 +101,38 @@ Module-05.md
 Git:
 Completed
 
+------------------------------------
+✅ Module 06 - Project Module
+
+Status:
+Completed
+
+Documentation:
+Module-06.md
+
+Git:
+Completed
+
+
+Current Module
+
+🎨 UI Enhancement Pass 01
+
+Current Phase
+
+✅ Phase 01 Completed
+
+Next
+
+➡ Phase 02 – Navbar Enhancement
+
+
+
+
+
+
 ## Remaining Modules
 
-
-⬜ Module 06
 
 ⬜ Module 07
 
@@ -130,7 +158,7 @@ Completed
 
 Last Completed Module
 
-Module 05 - Skills Module
+Module 06 - Project Module
 
 ------------------------------------
 
