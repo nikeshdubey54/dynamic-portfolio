@@ -1,31 +1,14 @@
-/* Responsive CSS */
-
-/* ==========================
-        Mobile (≤768px)
-========================== */
-
-@media (max-width:768px){
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-    }
-
-    .hero-btn-primary,
-    .hero-btn-outline{
-
-        width:100%;
-
-    }
-
-}
+/* ===================================
+        Responsive CSS
+=================================== */
 
 /* ==========================
         Tablet (≤991px)
 ========================== */
 
 @media (max-width:991px){
+
+    /* Navbar */
 
     .navbar-nav{
 
@@ -45,9 +28,47 @@
 
 }
 
+/* ==========================
+        Mobile (≤768px)
+========================== */
 
-/* Laptop */
+@media (max-width:768px){
 
-@media(min-width:993px){
+    /* Hero Section */
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline{
+
+        width:100%;
+
+    }
+
+    /* Skill Categories */
+
+    .skill-category-title{
+
+        font-size:1.6rem;
+
+    }
+
+    /* Skill Cards */
+
+    .skill-card{
+
+        margin-bottom:20px;
+
+    }
+
+    .skill-card .card-body{
+
+        padding:20px;
+
+    }
 
 }

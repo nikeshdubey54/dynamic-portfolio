@@ -1,3 +1,70 @@
-/* Animation CSS */
+/* ===================================
+        Animation CSS
+=================================== */
 
-/* Future animations will be added here */
+
+/* ==========================
+      Skill Progress Animation
+========================== */
+
+.skill-progress{
+
+    animation:progressAnimation 1.8s ease-in-out;
+
+}
+
+/* ==========================
+      Progress Shine Effect
+========================== */
+
+.skill-progress::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-40%;
+
+    width:40%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:skewX(-20deg);
+
+    animation:shine 2.5s infinite;
+
+}
+
+/* ==========================
+      Keyframes
+========================== */
+
+@keyframes progressAnimation{
+
+    from{
+
+        width:0 !important;
+
+    }
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        left:-40%;
+
+    }
+
+    100%{
+
+        left:120%;
+
+    }
+
+}
