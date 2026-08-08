@@ -1,41 +1,106 @@
-<footer class="bg-dark text-light mt-5 py-4">
+<footer class="footer-section">
+
     <div class="container">
 
-        <div class="row">
+        <div class="row gy-4">
+
+            <!-- Brand Section -->
 
             <div class="col-md-4">
-                <h5>Dynamic Portfolio</h5>
-                <p>
-                    A professional portfolio website built using Django.
+
+                <h3 class="footer-logo">
+
+                    Nikesh Portfolio
+
+                </h3>
+
+                <p class="footer-text">
+
+                    Python Full Stack Developer passionate about building
+                    modern, scalable and responsive web applications.
+
                 </p>
+
+                <div class="footer-social mt-4">
+
+                    <a href="https://github.com/nikeshdubey54"
+                       target="_blank">
+
+                        <i class="bi bi-github"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/nikesh-dubey-3101963a5"
+                       target="_blank">
+
+                        <i class="bi bi-linkedin"></i>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/nikesh_45_"
+                       target="_blank">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+                    <a href="mailto:nikeshdubey54@gmail.com">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                    </a>
+
+                </div>
+
             </div>
 
+            <!-- Quick Links -->
+
             <div class="col-md-4">
-                <h5>Quick Links</h5>
 
-                <ul class="list-unstyled">
+                <h5 class="footer-heading">
 
-                    <li><a href="/" class="text-decoration-none text-light">Home</a></li>
+                    Quick Links
 
-                    <li><a href="#" class="text-decoration-none text-light">About</a></li>
+                </h5>
 
-                    <li><a href="#" class="text-decoration-none text-light">Projects</a></li>
+                <ul class="footer-links">
 
-                    <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'skills' %}">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">Projects</a>
+                    </li>
 
                 </ul>
 
             </div>
 
+            <!-- Contact -->
+
             <div class="col-md-4">
 
-                <h5>Contact</h5>
+                <h5 class="footer-heading">
 
-                <p>Email : your@email.com</p>
+                    Contact
 
-                <p>Phone : +91-9876543210</p>
+                </h5>
 
-                <p>Location : India</p>
+                <p>Email : nikeshdubey54@gmail.com</p>
+
+                <p>Phone : +91 9142742068</p>
+
+                <p>Location : Bihar, India</p>
 
             </div>
 
@@ -45,13 +110,24 @@
 
         <div class="text-center">
 
-            <p class="mb-0">
+            <p class="mb-0 small">
 
-                © 2026 Dynamic Portfolio. All Rights Reserved.
+                © 2026 <strong>Nikesh Dubey</strong> | All Rights Reserved.
 
             </p>
 
         </div>
 
     </div>
+
 </footer>
+<!-- ==========================
+        Back To Top
+========================== -->
+
+<a href="#"
+class="back-to-top">
+
+    <i class="bi bi-arrow-up-short"></i>
+
+</a>

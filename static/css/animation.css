@@ -68,3 +68,738 @@
     }
 
 }
+
+/* ===================================
+        Hero Entrance Animation
+=================================== */
+
+/* Left Content */
+
+.hero-badge,
+.hero-title,
+.hero-subtitle,
+.hero-text,
+.hero-buttons{
+
+    opacity:0;
+
+    animation:fadeLeft .8s ease forwards;
+
+}
+
+.hero-title{
+
+    animation-delay:.2s;
+
+}
+
+.hero-subtitle{
+
+    animation-delay:.4s;
+
+}
+
+.hero-text{
+
+    animation-delay:.6s;
+
+}
+
+.hero-buttons{
+
+    animation-delay:.8s;
+
+}
+
+/* Right Card */
+
+.hero-card{
+
+    opacity:0;
+
+    animation:fadeRight 1s ease forwards;
+
+    animation-delay:.5s;
+
+}
+
+/* Profile Image */
+
+.hero-profile-img{
+
+    animation:zoomIn 1.1s ease;
+
+}
+
+/* ===================================
+            Keyframes
+=================================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===================================
+        Hero Floating Animation
+=================================== */
+
+/* Floating Hero Card */
+
+.hero-card{
+
+    animation:
+        fadeRight 1s ease forwards,
+        floatingCard 4s ease-in-out infinite;
+
+    animation-delay:.5s,1.5s;
+
+}
+
+/* Floating Profile Image */
+
+.hero-profile-img{
+
+    animation:
+        zoomIn 1s ease,
+        floatingImage 5s ease-in-out infinite;
+
+    animation-delay:0s,1.2s;
+
+}
+
+/* Counter Hover */
+
+.hero-counter{
+
+    transition:.3s ease;
+
+}
+
+.hero-counter:hover{
+
+    transform:scale(1.12);
+
+    color:#0a58ca;
+
+}
+
+/* Social Buttons */
+
+.hero-social-links .btn{
+
+    transition:.3s ease;
+
+}
+
+.hero-social-links .btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ===================================
+            Keyframes
+=================================== */
+
+@keyframes floatingCard{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatingImage{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+            Fade Up Keyframes
+=================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+        About Section Animation
+=================================== */
+
+/* Left Image */
+
+.about-profile-img{
+
+    opacity:0;
+
+    animation:fadeLeft .9s ease forwards;
+
+    animation-delay:.2s;
+
+}
+
+/* Right Content */
+
+.about-title{
+
+    opacity:0;
+
+    animation:fadeRight .8s ease forwards;
+
+}
+
+.about-designation{
+
+    opacity:0;
+
+    animation:fadeRight .8s ease forwards;
+
+    animation-delay:.2s;
+
+}
+
+.about-description{
+
+    opacity:0;
+
+    animation:fadeRight .8s ease forwards;
+
+    animation-delay:.4s;
+
+}
+
+/* Info Cards */
+
+.about-info-card{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.about-info-card:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+.about-info-card:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.about-info-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.about-info-card:nth-child(4){
+
+    animation-delay:.8s;
+
+}
+
+/* Timeline Cards */
+
+.about-card{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+/* ===================================
+        Projects Animation
+=================================== */
+
+/* Featured Project */
+
+.featured-project-card{
+
+    opacity:0;
+
+    animation:fadeUp .9s ease forwards;
+
+}
+
+/* Project Cards */
+
+.project-card{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.project-card:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+.project-card:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.project-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.project-card:nth-child(4){
+
+    animation-delay:.8s;
+
+}
+
+.project-card:nth-child(5){
+
+    animation-delay:1s;
+
+}
+
+.project-card:nth-child(6){
+
+    animation-delay:1.2s;
+
+}
+
+.project-image{
+
+    transition:.45s ease;
+
+}
+
+.project-card:hover .project-image{
+
+    transform:scale(1.08);
+
+}
+
+.project-btn{
+
+    transition:.3s ease;
+
+}
+
+.project-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ===================================
+        Skills Section Animation
+=================================== */
+
+/* Section Heading */
+
+/* Section Heading */
+
+.skills-title,
+.skills-subtitle{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.skills-subtitle{
+
+    animation-delay:.2s;
+
+}
+
+/* Skill Cards */
+
+.skill-card{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+/* Stagger Animation */
+
+.skill-card:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+.skill-card:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.skill-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.skill-card:nth-child(4){
+
+    animation-delay:.8s;
+
+}
+
+.skill-card:nth-child(5){
+
+    animation-delay:1s;
+
+}
+
+.skill-card:nth-child(6){
+
+    animation-delay:1.2s;
+
+}
+
+/* ===================================
+        Projects Animation
+=================================== */
+
+/* Heading */
+
+.projects-header{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.projects-subtitle{
+
+    animation-delay:.2s;
+
+}
+
+/* Featured Project */
+
+.featured-project-card{
+
+    opacity:0;
+
+    animation:fadeUp 1s ease forwards;
+
+    animation-delay:.4s;
+
+}
+
+/* Normal Cards */
+
+.project-card{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.projects-section .row > div:nth-child(1) .project-card{
+
+    animation-delay:.2s;
+
+}
+
+.projects-section .row > div:nth-child(2) .project-card{
+
+    animation-delay:.4s;
+
+}
+
+.projects-section .row > div:nth-child(3) .project-card{
+
+    animation-delay:.6s;
+
+}
+
+.projects-section .row > div:nth-child(4) .project-card{
+
+    animation-delay:.8s;
+
+}
+
+.projects-section .row > div:nth-child(5) .project-card{
+
+    animation-delay:1s;
+
+}
+
+.projects-section .row > div:nth-child(6) .project-card{
+
+    animation-delay:1.2s;
+
+}
+
+.project-image{
+
+    transition:.45s ease;
+
+}
+
+.project-card:hover .project-image{
+
+    transform:scale(1.08);
+
+}
+
+.featured-btn,
+.project-btn{
+
+    transition:.3s ease;
+
+}
+
+.featured-btn:hover,
+.project-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ===================================
+        Footer Animation
+=================================== */
+
+/* Footer Section */
+
+.footer-section{
+
+    opacity:0;
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+/* Logo */
+
+.footer-logo{
+
+    opacity:0;
+
+    animation:fadeLeft .8s ease forwards;
+
+    animation-delay:.2s;
+
+}
+
+/* Footer Text */
+
+.footer-text{
+
+    opacity:0;
+
+    animation:fadeLeft .8s ease forwards;
+
+    animation-delay:.4s;
+
+}
+
+/* Headings */
+
+.footer-heading{
+
+    opacity:0;
+
+    animation:fadeRight .8s ease forwards;
+
+    animation-delay:.3s;
+
+}
+
+/* Footer Links */
+
+.footer-links li{
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+}
+
+.footer-links li:nth-child(1){
+
+    animation-delay:.3s;
+
+}
+
+.footer-links li:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.footer-links li:nth-child(3){
+
+    animation-delay:.7s;
+
+}
+
+.footer-links li:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+/* Social Icons */
+
+.footer-social a{
+
+    opacity:0;
+
+    animation:zoomIn .6s ease forwards;
+
+}
+
+.footer-social a:nth-child(1){
+
+    animation-delay:.3s;
+
+}
+
+.footer-social a:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.footer-social a:nth-child(3){
+
+    animation-delay:.7s;
+
+}
+
+.footer-social a:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+/* Back To Top */
+
+.back-to-top{
+
+    animation:
+
+        floatingImage 4s ease-in-out infinite;
+
+}
+

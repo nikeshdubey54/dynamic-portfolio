@@ -6,9 +6,43 @@ Projects | Dynamic Portfolio
 
 {% block content %}
 
-<section class="py-5">
+<section class="projects-section py-5">
 
     <div class="container">
+
+
+        <!-- Section Heading -->
+
+        <div class="projects-header text-center mb-5">
+
+            <span class="projects-badge badge bg-primary mb-3">
+
+                Portfolio Showcase
+
+            </span>
+
+            <h1 class="projects-title">
+
+                My
+
+                <span class="text-primary">
+
+                    Projects
+
+                </span>
+
+            </h1>
+
+            <p class="projects-subtitle">
+
+                <!-- Explore some of my real-world projects built using Python,
+                Django, MySQL, Bootstrap and modern web technologies. -->
+
+                A collection of projects built using Python, Django, MySQL, Bootstrap and modern web technologies.
+
+            </p>
+
+        </div>
 
         <!-- Featured Projects -->
 
@@ -16,45 +50,105 @@ Projects | Dynamic Portfolio
 
         <div class="mb-5">
 
-            <h2 class="text-center text-primary mb-4">
+            <h2 class="text-center text-primary mb-5">
 
                 ⭐ Featured Projects
 
             </h2>
+            <p class="text-muted mb-5 text-center">
+                A highlighted project showcasing my best work and technical expertise.
+            </p>
 
-            <div class="row">
+            {% for project in featured_projects %}
 
-                {% for project in featured_projects %}
+            <div class="card featured-project-card border-0 shadow-lg mb-5">
 
-                <div class="col-md-6 mb-4">
+                <div class="row g-0 align-items-center">
 
-                    <div class="card border-primary shadow-sm">
+                    <!-- Image -->
 
-                        <div class="card-body">
+                    <div class="col-lg-5">
 
-                            <h4>
+                        {% if project.image %}
 
-                                <a href="{% url 'project_detail' project.id %}"
-                                    class="text-decoration-none">
+                        <img
+                            src="{{ project.image.url }}"
+                            class="featured-project-img"
+                            alt="{{ project.title }}">
 
-                                        {{ project.title }}
+                        {% endif %}
 
-                                </a> 
+                    </div>
 
-                            </h4>
+                    <!-- Content -->
 
-                            <p>
+                    <div class="col-lg-7">
 
-                                {{ project.short_description|truncatewords:15 }}
+                        <div class="card-body p-5">
+
+                            <span class="badge bg-warning text-dark mb-3">
+
+                                ⭐ Featured Project
+
+                            </span>
+
+                            <h2 class="fw-bold mb-3">
+
+                                {{ project.title }}
+
+                            </h2>
+
+                            <p class="text-muted mb-4">
+
+                                {{ project.short_description }}
 
                             </p>
 
-                            <a href="{% url 'project_detail' project.id %}"
-                            class="btn btn-outline-primary btn-sm">
+                            <p class="mb-4">
 
-                                View Details
+                                <strong>Technologies :</strong>
 
-                            </a>
+                                {{ project.technologies }}
+
+                            </p>
+
+                            <div class="d-flex flex-wrap gap-3">
+
+                                <a
+                                    href="{% url 'project_detail' project.id %}"
+                                    class="btn btn-primary featured-btn">
+
+                                    View Details
+
+                                </a>
+
+                                {% if project.github_link %}
+
+                                <a
+                                    href="{{ project.github_link }}"
+                                    target="_blank"
+                                    class="btn btn-dark featured-btn">
+
+                                    GitHub
+
+                                </a>
+
+                                {% endif %}
+
+                                {% if project.live_demo %}
+
+                                <a
+                                    href="{{ project.live_demo }}"
+                                    target="_blank"
+                                    class="btn btn-outline-primary featured-btn">
+
+                                    Live Demo
+
+                                </a>
+
+                                {% endif %}
+
+                            </div>
 
                         </div>
 
@@ -62,29 +156,29 @@ Projects | Dynamic Portfolio
 
                 </div>
 
-                {% endfor %}
-
             </div>
+
+            {% endfor %}
 
         </div>
 
         {% endif %}
 
-        <!-- Section Heading -->
+        <!-- Projects Row -->
 
-        <div class="text-center mb-5">
+        <div class="projects-header text-center my-5">
 
-            <h1 class="fw-bold">
-                My Projects
-            </h1>
+            <h2 class="fw-bold">
+                All
+                <span class="text-primary">
+                    Projects
+                </span>
+            </h2>
 
             <p class="text-muted">
-                Here are some of my recent projects built using Python, Django and modern web technologies.
+                Browse all my completed projects and case studies.
             </p>
-
         </div>
-
-        <!-- Projects Row -->
 
         <div class="row">
 
@@ -92,19 +186,23 @@ Projects | Dynamic Portfolio
 
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <div class="card shadow-sm h-100">
+                <div class="card project-card h-100 border-0">
 
                     {% if project.image %}
 
-                    <img src="{{ project.image.url }}"
-                         class="card-img-top"
-                         alt="{{ project.title }}">
+                    <div class="project-image-wrapper">
+
+                        <img src="{{ project.image.url }}"
+                            class="card-img-top project-image"
+                            alt="{{ project.title }}">
+
+                    </div>
 
                     {% endif %}
 
-                   <div class="card-body">
+                   <div class="card-body project-card-body">
 
-                        <h4 class="card-title">
+                        <h4 class="card-title project-title">
 
                             <a href="{% url 'project_detail' project.id %}"
                             class="text-decoration-none">
@@ -121,13 +219,15 @@ Projects | Dynamic Portfolio
 
                         </p>
 
-                        <p>
+                        <div class="project-tech mt-3">
 
-                            <strong>Technologies :</strong>
+                            <span class="badge bg-primary">
 
-                            {{ project.technologies }}
+                                {{ project.technologies }}
 
-                        </p>
+                            </span>
+
+                        </div>
 
                         {% if project.featured %}
 
@@ -143,13 +243,13 @@ Projects | Dynamic Portfolio
 
                     <!-- Card Footer -->
 
-                 <div class="card-footer bg-white">
+                 <div class="card-footer bg-white project-footer">
 
                     {% if project.github_link %}
 
                     <a href="{{ project.github_link }}"
                     target="_blank"
-                    class="btn btn-dark btn-sm">
+                    class="btn btn-dark project-btn">
 
                         GitHub
 
@@ -161,7 +261,7 @@ Projects | Dynamic Portfolio
 
                     <a href="{{ project.live_demo }}"
                     target="_blank"
-                    class="btn btn-primary btn-sm">
+                    class="btn btn-primary project-btn">
 
                         Live Demo
 
@@ -177,7 +277,7 @@ Projects | Dynamic Portfolio
 
             {% empty %}
 
-            <div class="col-12 text-center">
+            <div class="col-12 text-center no-project">
 
                 <h4>No Projects Available</h4>
 

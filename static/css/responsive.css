@@ -8,23 +8,79 @@
 
 @media (max-width:991px){
 
-    /* Navbar */
+/* ==========================
+        Navbar
+========================== */
+
+    .navbar-collapse{
+
+        background:rgba(15,23,42,.96);
+
+        backdrop-filter:blur(14px);
+
+        -webkit-backdrop-filter:blur(14px);
+
+        border-radius:18px;
+
+        margin-top:18px;
+
+        padding:20px;
+
+        box-shadow:0 15px 40px rgba(0,0,0,.20);
+
+    }
 
     .navbar-nav{
 
-        margin-top:20px;
+        margin-top:15px;
 
         text-align:center;
+
+        align-items:center;
 
     }
 
     .navbar-dark .navbar-nav .nav-link{
 
-        margin:10px 0;
+        width:100%;
 
-        padding:10px;
+        margin:8px 0;
+
+        padding:12px 18px;
+
+        border-radius:10px;
+
+        text-align:center;
 
     }
+
+    .navbar-dark .navbar-nav .nav-link:hover{
+
+        background:rgba(255,255,255,.08);
+
+        transform:none;
+
+    }
+
+    .navbar-dark .navbar-nav .nav-link::after{
+
+        display:none;
+
+    }
+
+    .navbar-brand{
+
+        font-size:1.25rem;
+
+    }
+
+    .brand-text{
+
+        font-size:1.2rem;
+
+    }
+
+    
 
 }
 
@@ -32,9 +88,53 @@
         Mobile (≤768px)
 ========================== */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
     /* Hero Section */
+
+    /* ==========================
+      Mobile Navbar Polish
+    ========================== */
+
+    .navbar{
+
+        padding:12px 0;
+
+    }
+
+    .navbar-brand{
+
+        font-size:1.1rem;
+
+    }
+
+    .brand-text{
+
+        font-size:1.1rem;
+
+    }
+
+    .navbar-brand span:first-child{
+
+        font-size:24px;
+
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+
+        font-size:15px;
+
+        font-weight:500;
+
+        padding:14px 18px;
+
+    }
+
+    .navbar-collapse{
+
+        border-radius:16px;
+
+    }
 
     .hero-buttons{
 
@@ -42,10 +142,167 @@
 
     }
 
+        /* Hero */
+
+    .hero-section{
+
+        min-height:auto;
+
+        padding:70px 0;
+
+    }
+
+    .hero-title{
+
+        font-size:2.7rem;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:1.35rem;
+
+    }
+
+    .hero-text{
+
+        font-size:1rem;
+
+    }
+
+    .hero-card{
+
+        padding:30px !important;
+
+    }
+
+    .hero-profile-img{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+    .hero-social-links{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+    }
+
+    .hero-social-links .btn{
+
+        width:100%;
+
+        min-width:0;
+
+        padding:10px 12px;
+
+        font-size:.9rem;
+
+    }
+    
+
     .hero-btn-primary,
     .hero-btn-outline{
 
         width:100%;
+
+    }
+
+        /* ==========================
+            About Section
+    ========================== */
+
+    .about-section{
+
+        text-align:center;
+
+    }
+
+    .about-profile-img{
+
+        width:240px;
+
+        height:240px;
+
+        margin-bottom:25px;
+
+    }
+
+    .about-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .about-designation{
+
+        font-size:1.25rem;
+
+    }
+
+    .about-description{
+
+        font-size:1rem;
+
+        max-width:100%;
+
+    }
+
+    .about-info-card{
+
+        text-align:left;
+
+    }
+
+    .section-title{
+
+        font-size:2rem;
+
+    }
+
+
+    /* ==========================
+        Skills Responsive
+    ========================== */
+
+    .skill-category-header{
+
+        text-align:center;
+
+    }
+
+
+    .skill-category-subtitle{
+
+        font-size:1rem;
+
+    }
+
+
+    .skill-card-body{
+
+        padding:22px;
+
+    }
+
+    .skill-title{
+
+        font-size:1.2rem;
+
+    }
+
+    .skill-level,
+    .skill-percent{
+
+        font-size:.95rem;
 
     }
 
@@ -69,6 +326,477 @@
 
         padding:20px;
 
+    }    
+    
+        /* Projects */
+
+    .projects-title{
+
+        font-size:2.2rem;
+
     }
+
+    .project-image{
+
+        height:200px;
+
+    }
+
+    .project-detail-title{
+
+        font-size:2rem;
+
+    }
+    
+    .project-card{
+
+        height:100%;
+
+    }
+
+    .project-card-body{
+
+        padding:22px;
+
+    }
+
+    .project-title{
+
+        font-size:1.25rem;
+
+    }
+
+    .project-tech{
+
+        gap:6px;
+
+    }
+
+    .project-tech .badge{
+
+        font-size:.8rem;
+
+        padding:6px 12px;
+
+    }
+
+    .project-footer{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .project-btn{
+
+        width:100%;
+
+        margin-right:0;
+
+    }
+
+
+
+
+
+
+   /* ==========================
+        Footer Responsive
+    ========================== */
+
+
+    .footer-section{
+
+        text-align:center;
+
+        padding:50px 0 20px;
+    }
+
+    .footer-section .row{
+
+        justify-content:center;
+    }
+
+    .footer-section .col-md-4{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+        margin-bottom:30px;
+    }
+
+    .footer-logo{
+
+        font-size:1.8rem;
+    }
+
+    .footer-heading{
+
+        margin-top:10px;
+
+        margin-bottom:15px;
+    }
+
+    .footer-text{
+
+        max-width:300px;
+
+        margin:0 auto;
+    }
+
+    .footer-links{
+
+        list-style:none;
+
+        padding:0;
+
+        margin:0;
+    }
+
+    .footer-links li{
+
+        margin-bottom:10px;
+    }
+
+    .footer-social{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        flex-wrap:wrap;
+
+        gap:16px;
+
+    }
+
+    .footer-social a{
+
+        margin:0;
+    }
+
+    .back-to-top{
+
+        width:42px;
+
+        height:42px;
+
+        right:16px;
+
+        bottom:20px;
+
+        font-size:20px;
+
+    }
+
+} 
+
+
+/* ===================================
+        Projects Responsive
+=================================== */
+
+@media (max-width:576px){
+
+    .featured-project-card{
+
+        border-radius:18px;
+
+    }
+
+    .featured-project-img{
+
+        width:100%;
+
+        height:auto;
+
+        min-height:auto;
+
+        object-fit:contain;
+
+        background:#f8f9fa;
+
+        padding:10px;
+
+    }
+
+    .featured-project-card .card-body{
+
+        padding:25px !important;
+
+    }
+
+    .featured-project-card h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .featured-btn{
+
+        width:100%;
+
+    }
+
+}
+
+/* ===================================
+    Mobile (≤576px)
+=================================== */
+
+@media (max-width:576px){
+
+        /* Hero Mobile */
+
+    .hero-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:1.2rem;
+
+    }
+
+    .hero-text{
+
+        font-size:.95rem;
+
+    }
+
+    .hero-profile-img{
+
+        width:160px;
+
+        height:160px;
+
+        border-radius:50%;
+
+        object-fit:cover;
+
+    }
+
+    .hero-card{
+
+        padding:25px !important;
+
+    }
+
+    .hero-counter{
+
+        font-size:1.5rem;
+
+    }
+
+    .hero-social-links{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+    }
+
+    .hero-social-links .btn{
+
+        flex:1 1 calc(50% - 10px);
+
+        min-width:120px;
+
+    }
+
+    /* ==========================
+            About Mobile
+    ========================== */
+
+    .about-profile-img{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    .about-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .about-designation{
+
+        font-size:1.1rem;
+
+    }
+
+    .about-description{
+
+        font-size:.95rem;
+
+    }
+
+    .about-info-card{
+
+        padding:18px;
+
+    }
+
+    .about-card .card-body{
+
+        padding:22px;
+
+    }
+
+    .section-title{
+
+        font-size:1.7rem;
+
+    }
+
+    /* ==========================
+        Skills Mobile
+    ========================== */
+
+    .skill-category-title{
+
+        font-size:1.5rem;
+
+    }
+
+    .skill-category-subtitle{
+
+        font-size:.9rem;
+
+    }
+
+    .skill-card-body{
+
+        padding:18px;
+
+    }
+
+    .skill-title{
+
+        font-size:1.1rem;
+
+    }
+
+    .progress{
+
+        height:10px;
+
+    }
+
+    .skill-level,
+    .skill-percent{
+
+        font-size:.85rem;
+
+    }
+
+    /* ==========================
+            Projects
+    ========================== */
+
+
+    .project-image{
+
+        height:180px;
+
+    }
+
+    .project-title{
+
+        font-size:1.15rem;
+
+    }
+
+    .project-card-body{
+
+        padding:18px;
+
+    }
+
+    .project-tech .badge{
+
+        font-size:.75rem;
+
+    }
+
+    .project-footer{
+
+        padding:18px;
+
+    }
+
+    /* Footer */
+
+    .footer-section .text-center p{
+
+        font-size:.85rem;
+
+        line-height:1.6;
+
+    }
+    /* ==========================
+            Global
+    ========================== */
+
+    .container{
+
+        padding-left:18px;
+
+        padding-right:18px;
+
+
+    }
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    h3{
+
+        font-size:1.3rem;
+
+    }
+
+    p{
+
+        font-size:.95rem;
+
+    }
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+
+
 
 }

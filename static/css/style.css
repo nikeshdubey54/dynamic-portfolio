@@ -47,19 +47,78 @@ h1{
         Navbar
 ========================== */
 
+/* ==========================
+      Premium Glass Navbar
+========================== */
+
 .navbar{
 
     padding:16px 0;
 
-    transition:all .3s ease;
+    transition:all .35s ease;
+
+}
+
+.custom-navbar{
+
+    background:rgba(15,23,42,.88);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+
+}
+
+.custom-navbar:hover{
+
+    box-shadow:0 14px 35px rgba(0,0,0,.18);
+
+}
+.custom-navbar .container{
+
+    min-height:72px;
+
+}
+.navbar-nav{
+
+    align-items:center;
 
 }
 
 
+/* ==========================
+        Premium Logo
+========================== */
+
+.navbar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
 
 .navbar-brand:hover{
 
-    transform:scale(1.02);
+    transform:translateY(-3px);
+
+}
+
+.navbar-brand .brand-text{
+
+    transition:color .35s ease;
 
 }
 
@@ -69,21 +128,51 @@ h1{
 
 }
 
+/* ==========================
+      Premium Navigation Links
+========================== */
+
 .navbar-dark .navbar-nav .nav-link{
 
     color:#ffffff;
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:500;
 
-    margin-left:18px;
+    margin-left:22px;
 
-    padding:8px 0;
+    padding:10px 0;
 
     position:relative;
 
-    transition:all .3s ease;
+    letter-spacing:.3px;
+
+    transition:all .35s ease;
+
+}
+
+.navbar-brand span:first-child{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    transition:all .4s ease;
+
+}
+
+.navbar-brand:hover span:first-child{
+
+    transform:rotate(-12deg) scale(1.12);
+
+    color:#0d6efd;
 
 }
 
@@ -91,7 +180,7 @@ h1{
 
 .navbar-dark .navbar-nav .nav-link:hover{
 
-    color:#0d6efd !important;
+    color:#4da3ff !important;
 
     transform:translateY(-2px);
 
@@ -103,10 +192,10 @@ h1{
 
 .navbar-dark .navbar-nav .nav-link.active{
 
-    color:#0d6efd !important;
+    color:#4da3ff !important;
 
-    font-weight:700;
-
+    font-weight:600;
+    pointer-events:none;
 }
 
 
@@ -118,17 +207,21 @@ h1{
 
     position:absolute;
 
-    left:0;
+    left:50%;
 
-    bottom:-5px;
+    bottom:-6px;
 
     width:0;
 
-    height:2px;
+    height:3px;
 
-    background:#0d6efd;
+    border-radius:50px;
 
-    transition:.3s ease;
+    background:#4da3ff;
+
+    transform:translateX(-50%);
+
+    transition:all .35s ease;
 
 }
 
@@ -136,7 +229,7 @@ h1{
 
 .navbar-dark .navbar-nav .nav-link.active::after{
 
-    width:100%;
+    width:80%;
 
 }
 
@@ -160,17 +253,6 @@ h1{
 
 /* Brand Hover */
 
-.navbar-brand{
-
-    font-weight:700;
-    letter-spacing:.5px;
-    transition:.3s ease;
-    cursor:pointer;
-
-}
-
-
-
 
 .navbar-collapse{
 
@@ -180,7 +262,19 @@ h1{
 
 .navbar-toggler{
 
-    transition:.3s ease;
+    width:46px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    transition:.35s ease;
+
+}
+
+.navbar-toggler:hover{
+
+    background:rgba(255,255,255,.08);
 
 }
 
@@ -343,17 +437,31 @@ h1{
 
 }
 
+
+
 .hero-profile-img{
 
-    width:250px;
+    width:250px !important;
 
-    height:250px;
+    height:250px !important;
+
+    min-width:250px;
+
+    min-height:250px;
+
+    max-width:250px;
+
+    max-height:250px;
+
+    border-radius:50%;
 
     object-fit:cover;
 
-    border:6px solid #ffffff;
+    display:block;
 
-    transition:all .35s ease;
+    margin:0 auto;
+
+    flex:none;
 
 }
 
@@ -843,3 +951,586 @@ h1{
     margin-bottom:18px;
 
 }
+
+/* ==========================
+        Projects Hero
+========================== */
+
+.projects-section{
+
+    background:linear-gradient(135deg,#f8f9fa,#eef5ff);
+
+}
+
+.projects-badge{
+
+    font-size:.85rem;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+}
+
+.projects-title{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.projects-subtitle{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#6c757d;
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+        Project Cards
+========================== */
+
+.project-card{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.project-card-body{
+
+    padding:28px;
+
+}
+
+.project-title{
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.project-title a{
+
+    color:#212529;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.project-title a:hover{
+
+    color:#0d6efd;
+
+}
+
+/* ==========================
+      Project Image
+========================== */
+
+.project-image-wrapper{
+
+    overflow:hidden;
+
+}
+
+.project-image{
+
+    height:220px;
+
+    width:100%;
+
+    object-fit:cover;
+
+    transition:all .4s ease;
+
+}
+
+.project-card:hover .project-image{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+      Project Technologies
+========================== */
+
+.project-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:18px 0;
+
+}
+
+.project-tech .badge{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:500;
+
+    white-space:normal;
+
+    text-align:center;
+
+    line-height:1.4;
+
+}
+
+/* ==========================
+      Project Buttons
+========================== */
+
+.project-footer{
+
+    border-top:none;
+
+    padding:20px;
+
+}
+
+.project-btn{
+
+    border-radius:10px;
+
+    padding:10px 18px;
+
+    transition:.3s ease;
+
+    margin-right:8px;
+
+}
+
+.project-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+/* ==========================
+      Project Detail
+========================== */
+
+.project-detail-section{
+
+    background:#f8f9fa;
+
+}
+
+.project-detail-title{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.project-detail-image{
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.project-detail-image:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ==========================
+      Empty State
+========================== */
+
+.no-project{
+
+    padding:80px 20px;
+
+}
+
+.no-project h4{
+
+    font-weight:700;
+
+}
+
+.no-project p{
+
+    color:#6c757d;
+
+}
+
+/* ==========================
+      Featured Project Card
+========================== */
+
+/* ==========================
+      Featured Project
+========================== */
+
+.featured-project-card{
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    background:#ffffff;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.featured-project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.18);
+
+}
+
+.featured-project-img{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:380px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.featured-btn{
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.featured-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==================================================
+                    FOOTER SECTION
+================================================== */
+
+.footer-section{
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    padding:70px 0 25px;
+
+    margin-top:100px;
+
+}
+
+.footer-logo{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.footer-text{
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    font-size:15px;
+
+}
+
+.footer-heading{
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.footer-links{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#0d6efd;
+
+    padding-left:8px;
+
+}
+
+.footer-section p{
+
+    color:#cbd5e1;
+
+    margin-bottom:12px;
+
+}
+
+.footer-section hr{
+
+    border-color:rgba(255,255,255,.12);
+
+    margin:45px 0 25px;
+
+}
+
+.footer-copy{
+
+    color:#94a3b8;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+/* ==================================================
+                Footer Social Icons
+================================================== */
+
+.footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.footer-social a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.footer-social a:hover{
+
+    background:#0d6efd;
+
+    color:#ffffff;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(13,110,253,.35);
+
+}
+/* ==================================================
+                Back To Top
+================================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:50px;
+
+    height:50px;
+
+    background:#0d6efd;
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    border-radius:50%;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    box-shadow:0 10px 25px rgba(13,110,253,.35);
+
+    transition:.35s ease;
+
+    z-index:999;
+
+}
+
+.back-to-top:hover{
+
+    background:#084298;
+
+    color:#ffffff;
+
+    transform:translateY(-6px) scale(1.08);
+
+    box-shadow:0 15px 35px rgba(13,110,253,.45);
+
+}
+
+/* ==========================
+        Footer Hover Effects
+========================== */
+
+.footer-links a{
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.footer-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-4px;
+
+    width:0;
+
+    height:2px;
+
+    background:#0d6efd;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover::after{
+
+    width:100%;
+
+}
+
+.footer-links a:hover{
+
+    color:#0d6efd;
+
+}
+
+.footer-social a{
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+
+
+
+
+
+
+
