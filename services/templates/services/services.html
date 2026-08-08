@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Services | Dynamic Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="services-section py-5">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="services-header text-center mb-5">
+
+            <span class="services-badge badge bg-primary mb-3">
+
+                What I Do
+
+            </span>
+
+            <h1 class="services-title">
+
+                My
+
+                <span class="text-primary">
+
+                    Services
+
+                </span>
+
+            </h1>
+
+            <p class="services-subtitle text-muted">
+
+                Professional development services focused on building
+                modern, responsive and scalable web applications.
+
+            </p>
+
+        </div>
+
+
+        <!-- Services -->
+
+        <div class="row g-4">
+
+            {% for service in services %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card service-card h-100 border-0 shadow-sm">
+                    {% if service.image %}
+
+                    <div class="service-image-wrapper mb-4">
+
+                        <img
+                            src="{{ service.image.url }}"
+                            class="service-image"
+                            alt="{{ service.title }}"
+                            loading="lazy">
+
+                    </div>
+
+                    {% endif %}
+                    <div class="card-body text-center p-4">
+
+                        {% if service.icon %}
+
+                        <div class="service-icon mb-4">
+
+                            <i class="{{ service.icon }}"></i>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <h3 class="service-title fw-bold mb-3">
+
+                            {{ service.title }}
+
+                        </h3>
+
+
+                        <p class="service-description text-muted">
+
+                            {{ service.short_description }}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12 text-center">
+
+                <h4>No Services Available</h4>
+
+                <p class="text-muted">
+
+                    Please add services from the Admin Panel.
+
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

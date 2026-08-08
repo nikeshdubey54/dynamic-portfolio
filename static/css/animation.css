@@ -803,3 +803,70 @@
 
 }
 
+/* ===================================
+        Services Animation
+=================================== */
+
+.service-card{
+
+    animation:serviceCardFadeIn .7s ease both;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+@keyframes serviceCardFadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.service-image{
+
+    transition:transform .45s ease;
+
+}
+
+.service-card:hover .service-image{
+
+    transform:scale(1.04);
+
+}
+
+.service-icon{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:0 8px 20px rgba(13,110,253,.15);
+
+}

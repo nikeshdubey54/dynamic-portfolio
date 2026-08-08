@@ -80,6 +80,39 @@
 
     }
 
+    /* ===================================
+        Services Responsive
+    =================================== */
+    .services-title{
+
+        font-size:2.5rem;
+
+    }
+
+    .services-subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .service-image-wrapper{
+
+        height:170px;
+
+    }
+
+    .service-card-body{
+
+        padding:24px;
+
+    }
+
+    .service-title{
+
+        font-size:1.25rem;
+
+    }
+
     
 
 }
@@ -499,6 +532,67 @@
 
     }
 
+    /* ===================================
+        Services Responsive
+    =================================== */
+
+    .services-section{
+
+        padding-top:60px !important;
+
+        padding-bottom:60px !important;
+
+    }
+
+    .services-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .services-subtitle{
+
+        font-size:.95rem;
+
+        line-height:1.6;
+
+    }
+
+    .service-image-wrapper{
+
+        height:180px;
+
+    }
+
+    .service-card-body{
+
+        padding:22px;
+
+    }
+
+    .service-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:25px;
+
+    }
+
+    .service-title{
+
+        font-size:1.2rem;
+
+    }
+
+    .service-description{
+
+        font-size:.92rem;
+
+    }
+
+
 } 
 
 
@@ -793,6 +887,74 @@
     body{
 
         overflow-x:hidden;
+
+    }
+
+    /* ===================================
+        Services Responsive
+    =================================== */
+
+    .services-section{
+
+        padding-top:50px !important;
+
+        padding-bottom:50px !important;
+
+    }
+
+    .services-header{
+
+        padding:0 5px;
+
+    }
+
+    .services-title{
+
+        font-size:1.9rem;
+
+    }
+
+    .services-subtitle{
+
+        font-size:.9rem;
+
+    }
+
+    .service-image-wrapper{
+
+        height:160px;
+
+    }
+
+    .service-card-body{
+
+        padding:20px;
+
+    }
+
+    .service-icon{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:23px;
+
+        border-radius:14px;
+
+    }
+
+    .service-title{
+
+        font-size:1.15rem;
+
+    }
+
+    .service-description{
+
+        font-size:.9rem;
+
+        line-height:1.6;
 
     }
 
