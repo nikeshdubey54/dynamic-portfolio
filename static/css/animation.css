@@ -870,3 +870,46 @@
     box-shadow:0 8px 20px rgba(13,110,253,.15);
 
 }
+
+/* ===================================
+        Contact Animations
+=================================== */
+
+.contact-header{
+
+    animation:contactFadeUp .7s ease both;
+
+}
+
+.contact-info-card{
+
+    animation:contactFadeUp .8s ease .1s both;
+
+}
+
+.contact-form-card{
+
+    animation:contactFadeUp .8s ease .2s both;
+
+}
+
+
+@keyframes contactFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

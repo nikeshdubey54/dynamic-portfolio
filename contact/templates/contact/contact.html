@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact | Dynamic Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-section py-5">
+
+    <div class="container contact-section">
+
+        <!-- Section Header -->
+
+        <div class="contact-header text-center mb-5">
+
+            <span class="contact-badge badge bg-primary mb-3">
+
+                Get In Touch
+
+            </span>
+
+            <h1 class="contact-title">
+
+                Contact
+
+                <span class="text-primary">
+
+                    Me
+
+                </span>
+
+            </h1>
+
+            <p class="contact-subtitle text-muted">
+
+                Have a question, project idea, or opportunity?
+                Feel free to get in touch with me.
+
+            </p>
+
+        </div>
+
+        
+
+
+        <!-- SUCCESS TOAST -->
+
+        {% if messages %}
+
+            <div class="toast-container contact-toast-container position-fixed end-0 p-3"
+                 style="z-index: 1100;">
+
+                {% for message in messages %}
+
+                    <div
+                        class="toast contact-toast align-items-center text-bg-success border-0"
+                        role="alert"
+                        aria-live="assertive"
+                        aria-atomic="true">
+
+                        <div class="d-flex">
+
+                            <div class="toast-body">
+
+                                <i class="fas fa-circle-check me-2"></i>
+
+                                {{ message }}
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="btn-close btn-close-white me-2 m-auto"
+                                data-bs-dismiss="toast"
+                                aria-label="Close">
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+        <!-- Contact Content -->
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- Contact Information -->
+
+            <div class="col-lg-5 col-md-6">
+
+                <div class="card contact-info-card h-100 border-0 shadow-sm">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="contact-info-title fw-bold mb-4">
+
+                            Let's Connect
+
+                        </h3>
+
+                        <p class="text-muted mb-4">
+
+                            I'm always open to discussing new projects,
+                            development opportunities and professional
+                            collaborations.
+
+                        </p>
+
+
+                        <!-- Email -->
+
+                        <div class="contact-info-item d-flex align-items-start mb-4">
+
+                            <div class="contact-info-icon">
+
+                                <i class="fas fa-envelope"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+
+                                    Email
+
+                                </h6>
+
+                                <p class="text-muted mb-0">
+
+                                    nikeshdubey54@gmail.com
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Location -->
+
+                        <div class="contact-info-item d-flex align-items-start mb-4">
+
+                            <div class="contact-info-icon">
+
+                                <i class="fas fa-location-dot"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+
+                                    Location
+
+                                </h6>
+
+                                <p class="text-muted mb-0">
+
+                                    Noida, Uttar Pradesh, India
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Availability -->
+
+                        <div class="contact-info-item d-flex align-items-start">
+
+                            <div class="contact-info-icon">
+
+                                <i class="fas fa-briefcase"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+
+                                    Availability
+
+                                </h6>
+
+                                <p class="text-muted mb-0">
+
+                                    Open to opportunities
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-7 col-md-6">
+
+                <div class="card contact-form-card border-0 shadow-sm">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="contact-form-title fw-bold mb-4">
+
+                            Send Me a Message
+
+                        </h3>
+            
+                        <form method="POST" novalidate>
+
+                            {% csrf_token %}
+
+
+                            <div class="row g-3">
+
+
+                                <!-- Name -->
+
+                                <div class="col-md-6">
+
+                                    <label for="{{ form.name.id_for_label }}"
+                                           class="form-label">
+
+                                        Name
+
+                                    </label>
+
+                                    {{ form.name }}
+
+                                    {% if form.name.errors %}
+
+                                        <div class="text-danger small mt-1">
+
+                                            {{ form.name.errors }}
+
+                                        </div>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Email -->
+
+                                <div class="col-md-6">
+
+                                    <label for="{{ form.email.id_for_label }}"
+                                           class="form-label">
+
+                                        Email
+
+                                    </label>
+
+                                    {{ form.email }}
+
+                                    {% if form.email.errors %}
+
+                                        <div class="text-danger small mt-1">
+
+                                            {{ form.email.errors }}
+
+                                        </div>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Subject -->
+
+                                <div class="col-12">
+
+                                    <label for="{{ form.subject.id_for_label }}"
+                                           class="form-label">
+
+                                        Subject
+
+                                    </label>
+
+                                    {{ form.subject }}
+
+                                    {% if form.subject.errors %}
+
+                                        <div class="text-danger small mt-1">
+
+                                            {{ form.subject.errors }}
+
+                                        </div>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Message -->
+
+                                <div class="col-12">
+
+                                    <label for="{{ form.message.id_for_label }}"
+                                           class="form-label">
+
+                                        Message
+
+                                    </label>
+
+                                    {{ form.message }}
+
+                                    {% if form.message.errors %}
+
+                                        <div class="text-danger small mt-1">
+
+                                            {{ form.message.errors }}
+
+                                        </div>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Submit -->
+
+                                <div class="col-12">
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary contact-submit-btn">
+
+                                        <i class="fas fa-paper-plane me-2"></i>
+
+                                        Send Message
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const toastElements = document.querySelectorAll('.contact-toast');
+
+        toastElements.forEach(function (toastElement) {
+
+            const toast = new bootstrap.Toast(
+                toastElement,
+                {
+                    delay: 4000
+                }
+            );
+
+            toast.show();
+
+        });
+
+    });
+
+</script>
+
+{% endblock %}

@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'skills',
     'projects',
     'services' ,
-    
+    'contact',
 
 ]
 
