@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'services' ,
     'contact',
     'blog',
+    'resume',
 
 ]
 

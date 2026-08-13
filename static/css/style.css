@@ -2330,6 +2330,96 @@ Featured Blog
     margin-bottom: 18px;
 }
 
+/* ==========================================
+   Resume Section
+   ========================================== */
+
+.resume-section {
+    min-height: 80vh;
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+}
+
+
+/* Resume Header */
+
+.resume-header {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resume-header h1 {
+    margin-bottom: 12px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.resume-header h3 {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+
+/* Contact Information */
+
+.resume-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* Professional Summary */
+
+.resume-summary {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.resume-summary h2 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.resume-summary p {
+    margin-bottom: 0;
+    color: #6c757d;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* Resume Buttons */
+
+.resume-actions {
+    margin-top: 30px;
+}
+
+.resume-actions .btn {
+    min-width: 175px;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.resume-actions .btn i {
+    font-size: 0.9rem;
+}
 
 
 

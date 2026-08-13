@@ -4,6 +4,7 @@
 {% url 'projects' as projects_url %}
 {% url 'services' as services_url %}
 {% url 'contact' as contact_url %}
+{% url 'resume' as resume_url %}
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
     <div class="container">
@@ -69,6 +70,15 @@
                     <a class="nav-link {% if request.path == services_url %}active{% endif %}"
                     href="{{ services_url }}">
                         Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link {% if request.path == '/resume/' %}active{% endif %}"
+                        href="{% url 'resume' %}"
+                    >
+                        Resume
                     </a>
                 </li>
 

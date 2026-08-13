@@ -820,6 +820,51 @@
 
     }
 
+    /* ==========================================
+   Resume Responsive Design
+   ========================================== */
+
+   .resume-section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .resume-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .resume-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .resume-contact {
+        font-size: 0.9rem;
+    }
+
+    .resume-summary {
+        padding: 24px;
+    }
+
+    .resume-summary h2 {
+        font-size: 1.35rem;
+    }
+
+    .resume-summary p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .resume-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .resume-actions .btn {
+        margin-left: 0 !important;
+    }
 
 
 } 
@@ -1441,6 +1486,98 @@
 
         width:100%;
 
+    }
+
+    /* ==========================================
+   Resume Responsive Design
+   ========================================== */
+
+   .resume-section {
+        padding-top: 45px !important;
+        padding-bottom: 45px !important;
+    }
+
+    .resume-header h1 {
+        font-size: 2rem;
+    }
+
+    .resume-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .resume-contact {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .resume-contact .mx-2 {
+        display: none;
+    }
+
+    .resume-summary {
+        padding: 22px;
+        border-radius: 12px;
+    }
+
+    .resume-summary h2 {
+        font-size: 1.25rem;
+    }
+
+    .resume-summary p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .resume-actions .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-left: 0 !important;
+    }
+
+}
+
+/* ==========================================
+   Extra Small Devices
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .resume-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .resume-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .resume-header h3 {
+        font-size: 1rem;
+    }
+
+    .resume-contact {
+        font-size: 0.85rem;
+    }
+
+    .resume-summary {
+        padding: 18px;
+    }
+
+    .resume-summary h2 {
+        font-size: 1.15rem;
+    }
+
+    .resume-summary p {
+        font-size: 0.9rem;
+    }
+
+    .resume-actions .btn {
+        max-width: 230px;
     }
 
 }
