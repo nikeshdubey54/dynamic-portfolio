@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }} | Dynamic Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="blog-detail-section py-5">
+
+    <div class="container">
+
+        <!-- Back Button -->
+
+        <div class="mb-4">
+
+            <a
+                href="{% url 'blog' %}"
+                class="btn btn-outline-primary blog-back-btn"
+            >
+
+                <i class="fas fa-arrow-left me-2"></i>
+
+                Back to Blog
+
+            </a>
+
+        </div>
+
+
+        <!-- Blog Article -->
+
+        <article class="blog-detail-card card border-0 shadow-sm">
+
+
+            <!-- Blog Image -->
+
+            {% if post.image %}
+
+                <div class="blog-detail-image-wrapper">
+
+                    <img
+                        src="{{ post.image.url }}"
+                        alt="{{ post.title }}"
+                        class="blog-detail-image"
+                    >
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Blog Content -->
+
+            <div class="blog-detail-body">
+
+
+                {% if post.category %}
+
+                    <span class="badge bg-primary mb-3">
+
+                        {{ post.category }}
+
+                    </span>
+
+                {% endif %}
+
+
+                <h1 class="blog-detail-title">
+
+                    {{ post.title }}
+
+                </h1>
+
+
+                <div class="blog-detail-meta mb-4">
+
+                    <span>
+
+                        <i class="fas fa-user me-1"></i>
+
+                        {{ post.author }}
+
+                    </span>
+
+                    <span class="mx-2">•</span>
+
+                    <span>
+
+                        <i class="fas fa-calendar me-1"></i>
+
+                        {{ post.created_at|date:"M d, Y" }}
+
+                    </span>
+
+                </div>
+
+
+                <p class="blog-detail-description">
+
+                    {{ post.short_description }}
+
+                </p>
+
+
+                <hr class="my-4">
+
+
+                <div class="blog-detail-content">
+
+                    {{ post.content|linebreaks }}
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}
