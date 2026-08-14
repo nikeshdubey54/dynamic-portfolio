@@ -1,0 +1,21 @@
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: nikeshdubey54@gmail.com
+Date: Thu, 13 Aug 2026 18:40:50 +0000
+Message-ID: <178664645011.16556.11229521746626458668@Sab79ita>
+
+Hello nikesh54,
+
+You requested a password reset for your portfolio account.
+
+Please use the link below to set a new password:
+
+http://127.0.0.1:8000/accounts/password/reset/confirm/MQ/dd9xu2-239573ef57f7b=
+3d222d1ae8102214602/
+
+If you did not request this, you can safely ignore this email.
+
+-------------------------------------------------------------------------------

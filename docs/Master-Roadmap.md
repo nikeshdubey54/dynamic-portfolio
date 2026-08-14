@@ -94,13 +94,13 @@ Module 06 ✅ Projects
 
 Module 07 – Services
 
-⬜ Module 07 - Services Module
+✅ Module 07 - Services Module
 
-⬜ Module 08 - Contact Module
+✅ Module 08 - Contact Module
 
-⬜ Module 09 - Blog Module
+✅ Module 09 - Blog Module
 
-⬜ Module 10 - Resume Module
+✅ Module 10 - Resume Module
 
 ⬜ Module 11 - Authentication Module
 
@@ -212,3 +212,109 @@ Module 15
 🚀 Production Optimization
         ↓
 Deployment
+
+
+
+
+
+### Second Roadmap 
+Module 06 – Projects
+        ↓
+🎨 UI Enhancement Pass 01 ✅
+        ↓
+Module 07 – Services ✅
+        ↓
+Module 08 – Contact ✅
+        ↓
+Module 09 – Blog ✅
+        ↓
+Module 10 – Resume ⬜
+        ↓
+Module 11 – Authentication ⬜
+        ↓
+Module 12 – Dashboard ⬜
+        ↓
+Module 13 – SEO & Performance ⬜
+        ↓
+Module 14 – Deployment ⬜
+        ↓
+Module 15 – Final Testing & Optimization ⬜
+        ↓
+🎨 UI Enhancement Pass 02
+        ↓
+GitHub Final
+        ↓
+Deployment
+Pass 02 ka purpose kya hoga?
+
+Pass 01 me humne overall portfolio ko premium look diya tha:
+
+Navbar
+Hero
+About
+Skills
+Projects
+Footer
+Animations
+Responsive design
+Basic code optimization
+
+Pass 02 me hum poore completed website ko ek saath final polish karenge.
+
+Jaise:
+
+Blog UI ko properly enhance karna
+Resume page ko polish karna
+Dashboard UI
+Authentication pages
+Mobile responsiveness ka final check
+Spacing/alignment
+Cards consistency
+Typography
+Buttons
+Images/cropping
+Animations ko consistent banana
+Duplicate CSS remove karna
+Unnecessary CSS remove karna
+Performance improvements
+Final visual consistency
+
+
+Complete Roadmap — Short Version
+✅ Module 01 - Home
+
+✅ Module 02 - About
+
+✅ Module 03 - Skills
+
+✅ Module 04 - Portfolio Core
+
+✅ Module 05 - Skills Enhancement
+
+✅ Module 06 - Projects
+
+✅ UI Enhancement Pass 01
+
+✅ Module 07 - Services
+
+✅ Module 08 - Contact
+
+✅ Module 09 - Blog
+
+✅ Module 10 - Resume
+
+⬜ Module 11 - Authentication & Security
+
+⬜ Module 12 - Dashboard & CMS
+
+⬜ Module 13 - SEO & Performance
+
+⬜ Module 14 - Final Features
+
+⬜ Module 15 - Deployment & Production
+
+⬜ UI Enhancement Pass 02 / Final UI Polish
+
+⬜ Module 16 - Final Testing & Optimization
+
+⬜ Module 17 - Final Deployment Verification
