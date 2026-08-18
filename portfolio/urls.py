@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from portfolio.sitemaps import StaticViewSitemap
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +34,15 @@ urlpatterns = [
     path('resume/',include('resume.urls')),
     path('accounts/', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('sitemap.xml',sitemap,{'sitemaps': {'static': StaticViewSitemap}},name='django-sitemap',),
+    path(
+        'robots.txt',
+        TemplateView.as_view(
+            template_name='robots.txt',
+            content_type='text/plain'
+        ),
+        name='robots.txt',
+    ),
 ]
 
 if settings.DEBUG:

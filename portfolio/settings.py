@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'home',
     'about',
     'skills',
@@ -72,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'portfolio.context_processors.site_settings',
             ],
         },
     },
@@ -134,6 +136,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 # Media Files Configuration
 
 MEDIA_URL = "/media/"
@@ -149,3 +153,23 @@ SECURE_REFERRER_POLICY = 'same-origin'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+# =========================================================
+# SEO & SITE CONFIGURATION
+# =========================================================
+
+SITE_NAME = "Nikesh Dubey - Python Full Stack Developer"
+
+SITE_DESCRIPTION = (
+    "Professional portfolio of Nikesh Dubey, "
+    "a Python Full Stack Developer specializing in Python, "
+    "Django, Django REST Framework, MySQL, JavaScript and React."
+)
+
+SITE_KEYWORDS = (
+    "Nikesh Dubey, Python Developer, Python Full Stack Developer, "
+    "Django Developer, Django REST Framework, Web Developer, "
+    "Software Engineer, Noida"
+)
+
+SITE_AUTHOR = "Nikesh Dubey"

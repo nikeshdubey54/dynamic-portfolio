@@ -1,0 +1,159 @@
+/* ===========================================
+        Dynamic Portfolio Design System
+=========================================== */
+
+:root{
+
+    /* Brand Colors */
+
+    --primary-color:#0d6efd;
+    --secondary-color:#6c757d;
+    --success-color:#198754;
+    --dark-color:#212529;
+    --light-color:#f8f9fa;
+    --white:#ffffff;
+
+    /* Background */
+
+    --body-bg:#f8f9fa;
+
+    /* Text */
+
+    --text-color:#343a40;
+
+    /* Border */
+
+    --border-color:#dee2e6;
+
+    /* Radius */
+
+    --radius:20px;
+
+    /* Shadow */
+
+    --shadow-sm:0 4px 15px rgba(0,0,0,.08);
+
+    --shadow-md:0 8px 25px rgba(0,0,0,.12);
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+}
+
+
+
+body{
+
+    background:var(--body-bg);
+
+    color:var(--text-color);
+
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+section{
+
+    min-height:80vh;
+
+    display:flex;
+
+    align-items:center;
+
+    scroll-margin-top:80px;
+
+    padding:90px 0;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.card img{
+
+    height:220px;
+
+    width:100%;
+
+    object-fit:cover;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+/* ==========================
+   Profile Image
+========================== */
+
+.rounded-circle{
+
+    border:8px solid var(--white);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn{
+
+    border-radius:10px;
+
+    transition:var(--transition);
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   Headings
+========================== */
+
+h1{
+
+    line-height:1.2;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    font-weight:600;
+
+}
+
+h3{
+
+    font-weight:600;
+
+}
