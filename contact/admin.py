@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from .models import ContactMessage
 
 
@@ -24,6 +23,10 @@ class ContactMessageAdmin(admin.ModelAdmin):
         'email',
         'subject',
         'message',
+    )
+
+    readonly_fields = (
+        'created_at',
     )
 
     ordering = (

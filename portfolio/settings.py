@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'blog',
     'resume',
     'accounts',
+    'dashboard',
 
 ]
 

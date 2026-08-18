@@ -1,0 +1,570 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Manage Messages | Dashboard
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container py-5 dashboard-page">
+
+    <!-- =========================
+         Page Header
+    ========================== -->
+
+    <div class="dashboard-header
+                d-flex
+                flex-column
+                flex-md-row
+                justify-content-between
+                align-items-md-center
+                mb-4">
+
+        <div>
+
+            <h1 class="fw-bold mb-2">
+                Manage Messages
+            </h1>
+
+            <p class="text-muted mb-0">
+                View and manage messages received through your contact form.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Messages Management Card
+    ========================== -->
+
+    <div class="card border-0 shadow-sm dashboard-management-card">
+
+        {% if messages_list %}
+
+
+            <!-- =================================================
+                 DESKTOP TABLE
+            ================================================== -->
+
+            <div class="dashboard-table-wrapper">
+
+                <table class="table table-hover
+                              align-middle
+                              dashboard-table">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th class="px-4 py-3">
+                                Sender
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Received
+                            </th>
+
+                            <th class="text-end px-4">
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for message in messages_list %}
+
+                        <tr>
+
+                            <!-- =========================
+                                 Sender
+                            ========================== -->
+
+                            <td class="px-4">
+
+                                <div class="message-info">
+
+                                    <h6 class="fw-semibold mb-1">
+
+                                        {{ message.name }}
+
+                                    </h6>
+
+                                    <small class="text-muted">
+
+                                        {{ message.email }}
+
+                                    </small>
+
+                                </div>
+
+                            </td>
+
+
+                            <!-- =========================
+                                 Subject
+                            ========================== -->
+
+                            <td>
+
+                                <span class="fw-medium">
+
+                                    {{ message.subject|truncatechars:45 }}
+
+                                </span>
+
+                            </td>
+
+
+                            <!-- =========================
+                                 Status
+                            ========================== -->
+
+                            <td>
+
+                                {% if message.is_read %}
+
+                                    <span class="badge bg-success">
+
+                                        <i class="bi bi-check-circle me-1"></i>
+
+                                        Read
+
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="badge bg-warning text-dark">
+
+                                        <i class="bi bi-envelope me-1"></i>
+
+                                        Unread
+
+                                    </span>
+
+                                {% endif %}
+
+                            </td>
+
+
+                            <!-- =========================
+                                 Received
+                            ========================== -->
+
+                            <td>
+
+                                <small class="text-muted">
+
+                                    {{ message.created_at|date:"d M Y, h:i A" }}
+
+                                </small>
+
+                            </td>
+
+
+                            <!-- =========================
+                                 Actions
+                            ========================== -->
+
+                            <td class="text-end px-4">
+
+                                <div class="d-inline-flex gap-2">
+
+
+                                    <!-- View -->
+
+                                    <a
+                                        href="{% url 'dashboard:message_detail' message.id %}"
+                                        class="btn btn-sm btn-outline-primary"
+                                        title="View Message"
+                                    >
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </a>
+
+
+                                    <!-- Read / Unread -->
+
+                                    <form
+                                        method="POST"
+                                        action="{% url 'dashboard:message_toggle_read' message.id %}"
+                                        class="d-inline"
+                                    >
+
+                                        {% csrf_token %}
+
+
+                                        {% if message.is_read %}
+
+                                            <button
+                                                type="submit"
+                                                class="btn btn-sm btn-outline-warning"
+                                                title="Mark as Unread"
+                                            >
+
+                                                <i class="bi bi-envelope"></i>
+
+                                            </button>
+
+                                        {% else %}
+
+                                            <button
+                                                type="submit"
+                                                class="btn btn-sm btn-outline-success"
+                                                title="Mark as Read"
+                                            >
+
+                                                <i class="bi bi-check2"></i>
+
+                                            </button>
+
+                                        {% endif %}
+
+                                    </form>
+
+
+                                    <!-- Delete -->
+
+                                    <a
+                                        href="{% url 'dashboard:message_delete' message.id %}"
+                                        class="btn btn-sm btn-outline-danger"
+                                        title="Delete Message"
+                                    >
+
+                                        <i class="bi bi-trash"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE MESSAGE LIST
+            ================================================== -->
+
+            <div class="dashboard-mobile-list">
+
+                {% for message in messages_list %}
+
+                <div class="dashboard-mobile-card message-mobile-card">
+
+
+                    <!-- =========================
+                         Mobile Header
+                    ========================== -->
+
+                    <div class="message-mobile-header">
+
+                        <div class="message-mobile-info">
+
+
+                            <!-- Message Icon -->
+
+                            <div class="dashboard-message-mobile-icon">
+
+                                {% if message.is_read %}
+
+                                    <i class="bi bi-envelope-open
+                                              text-success"></i>
+
+                                {% else %}
+
+                                    <i class="bi bi-envelope
+                                              text-primary"></i>
+
+                                {% endif %}
+
+                            </div>
+
+
+                            <!-- Sender -->
+
+                            <div class="message-mobile-content">
+
+                                <h5 class="fw-semibold mb-1">
+
+                                    {{ message.name }}
+
+                                </h5>
+
+                                <p class="text-muted mb-0">
+
+                                    {{ message.email }}
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         Mobile Message Details
+                    ========================== -->
+
+                    <div class="dashboard-mobile-details">
+
+
+                        <!-- Subject -->
+
+                        <div class="dashboard-mobile-detail">
+
+                            <span class="dashboard-mobile-label">
+
+                                Subject
+
+                            </span>
+
+                            <span class="dashboard-mobile-value fw-medium">
+
+                                {{ message.subject }}
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="dashboard-mobile-detail">
+
+                            <span class="dashboard-mobile-label">
+
+                                Status
+
+                            </span>
+
+                            <span class="dashboard-mobile-value">
+
+                                {% if message.is_read %}
+
+                                    <span class="badge bg-success">
+
+                                        <i class="bi bi-check-circle me-1"></i>
+
+                                        Read
+
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="badge bg-warning text-dark">
+
+                                        <i class="bi bi-envelope me-1"></i>
+
+                                        Unread
+
+                                    </span>
+
+                                {% endif %}
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- Received -->
+
+                        <div class="dashboard-mobile-detail">
+
+                            <span class="dashboard-mobile-label">
+
+                                Received
+
+                            </span>
+
+                            <span class="dashboard-mobile-value">
+
+                                {{ message.created_at|date:"d M Y, h:i A" }}
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         Mobile Actions
+                    ========================== -->
+
+                    <div class="dashboard-mobile-actions">
+
+
+                        <!-- View -->
+
+                        <a
+                            href="{% url 'dashboard:message_detail' message.id %}"
+                            class="btn btn-outline-primary"
+                        >
+
+                            <i class="bi bi-eye me-1"></i>
+
+                            View
+
+                        </a>
+
+
+                        <!-- Read / Unread -->
+
+                        <form
+                            method="POST"
+                            action="{% url 'dashboard:message_toggle_read' message.id %}"
+                            class="flex-fill"
+                        >
+
+                            {% csrf_token %}
+
+
+                            {% if message.is_read %}
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-outline-warning w-100"
+                                >
+
+                                    <i class="bi bi-envelope me-1"></i>
+
+                                    Unread
+
+                                </button>
+
+                            {% else %}
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-outline-success w-100"
+                                >
+
+                                    <i class="bi bi-check2 me-1"></i>
+
+                                    Read
+
+                                </button>
+
+                            {% endif %}
+
+                        </form>
+
+
+                        <!-- Delete -->
+
+                        <a
+                            href="{% url 'dashboard:message_delete' message.id %}"
+                            class="btn btn-outline-danger"
+                        >
+
+                            <i class="bi bi-trash me-1"></i>
+
+                            Delete
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+        {% else %}
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div class="text-center py-5 px-4 dashboard-empty-state">
+
+                <div class="mb-3">
+
+                    <i class="bi bi-envelope-open
+                              display-4
+                              text-muted"></i>
+
+                </div>
+
+
+                <h4 class="fw-bold mb-2">
+
+                    No Messages Found
+
+                </h4>
+
+
+                <p class="text-muted mb-0">
+
+                    You haven't received any messages yet.
+
+                </p>
+
+            </div>
+
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- =========================
+         Back To Dashboard
+    ========================== -->
+
+    <div class="mt-4">
+
+        <a
+            href="{% url 'dashboard:home' %}"
+            class="btn btn-outline-secondary dashboard-back-btn"
+        >
+
+            <i class="bi bi-arrow-left me-2"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

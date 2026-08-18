@@ -102,9 +102,9 @@ Module 07 – Services
 
 ✅ Module 10 - Resume Module
 
-⬜ Module 11 - Authentication Module
+✅ Module 11 - Authentication Module
 
-⬜ Module 12 - Dashboard Module
+✅ Module 12 - Dashboard Module
 
 ⬜ Module 13 - SEO & Performance
 
@@ -303,7 +303,7 @@ Complete Roadmap — Short Version
 
 ✅ Module 10 - Resume
 
-⬜ Module 11 - Authentication & Security
+✅ Module 11 - Authentication & Security
 
 ⬜ Module 12 - Dashboard & CMS
 

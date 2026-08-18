@@ -1,0 +1,499 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Manage Projects | Dashboard
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid container-xl py-4 py-lg-5 dashboard-page">
+
+
+    <!-- =========================================
+         Page Header
+    ========================================== -->
+
+    <div class="dashboard-header
+                d-flex
+                flex-column flex-md-row
+                justify-content-between
+                align-items-start
+                align-items-md-center
+                gap-3
+                mb-4">
+
+        <div>
+
+            <h1 class="fw-bold mb-2">
+                Manage Projects
+            </h1>
+
+            <p class="text-muted mb-0">
+                Create, update and manage your portfolio projects.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-header-actions">
+
+            <a href="{% url 'dashboard:project_create' %}"
+               class="btn btn-primary px-4 dashboard-action-btn">
+
+                <i class="bi bi-plus-lg me-2"></i>
+
+                Add New Project
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         Project List
+    ========================================== -->
+
+    <div class="card dashboard-management-card border-0 shadow-sm">
+
+        <div class="card-body p-0">
+
+
+            {% if projects %}
+
+
+                <!-- =========================================
+                     Desktop / Tablet Table
+                ========================================== -->
+
+                <div class="table-responsive dashboard-table-wrapper">
+
+                    <table class="table table-hover align-middle mb-0 dashboard-table">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th class="px-4 py-3">
+                                    Project
+                                </th>
+
+                                <th>
+                                    Technologies
+                                </th>
+
+                                <th>
+                                    Featured
+                                </th>
+
+                                <th>
+                                    Created
+                                </th>
+
+                                <th class="text-end px-4">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            {% for project in projects %}
+
+                            <tr>
+
+
+                                <!-- Project -->
+
+                                <td class="px-4">
+
+                                    <div class="d-flex align-items-center project-info">
+
+                                        {% if project.image %}
+
+                                            <img
+                                                src="{{ project.image.url }}"
+                                                alt="{{ project.title }}"
+                                                class="rounded dashboard-project-thumbnail"
+                                            >
+
+                                        {% else %}
+
+                                            <div class="dashboard-project-placeholder">
+
+                                                <i class="bi bi-folder2 text-muted fs-4"></i>
+
+                                            </div>
+
+                                        {% endif %}
+
+
+                                        <div class="project-content">
+
+                                            <h6 class="fw-semibold mb-1">
+
+                                                {{ project.title }}
+
+                                            </h6>
+
+
+                                            <small class="text-muted">
+
+                                                {{ project.short_description|truncatechars:60 }}
+
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <!-- Technologies -->
+
+                                <td>
+
+                                    <span class="text-muted">
+
+                                        {{ project.technologies|truncatechars:45 }}
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- Featured -->
+
+                                <td>
+
+                                    {% if project.featured %}
+
+                                        <span class="badge bg-success">
+
+                                            Featured
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+
+                                            No
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <!-- Created -->
+
+                                <td>
+
+                                    <small class="text-muted">
+
+                                        {{ project.created_at|date:"d M Y" }}
+
+                                    </small>
+
+                                </td>
+
+
+                                <!-- Actions -->
+
+                                <td class="text-end px-4">
+
+                                    <div class="d-inline-flex gap-2">
+
+                                        <a
+                                            href="{% url 'dashboard:project_update' project.id %}"
+                                            class="btn btn-sm btn-outline-primary"
+                                            title="Edit Project"
+                                        >
+
+                                            <i class="bi bi-pencil"></i>
+
+                                        </a>
+
+
+                                        <a
+                                            href="{% url 'dashboard:project_delete' project.id %}"
+                                            class="btn btn-sm btn-outline-danger"
+                                            title="Delete Project"
+                                        >
+
+                                            <i class="bi bi-trash"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =========================================
+                     Mobile Project Cards
+                ========================================== -->
+
+                <div class="dashboard-mobile-list">
+
+                    {% for project in projects %}
+
+                    <div class="dashboard-mobile-card">
+
+
+                        <!-- Project Header -->
+
+                        <div class="dashboard-mobile-card-header">
+
+
+                            <div class="project-mobile-info">
+
+
+                                {% if project.image %}
+
+                                    <img
+                                        src="{{ project.image.url }}"
+                                        alt="{{ project.title }}"
+                                        class="dashboard-project-mobile-image"
+                                    >
+
+                                {% else %}
+
+                                    <div class="dashboard-project-mobile-placeholder">
+
+                                        <i class="bi bi-folder2 text-muted fs-4"></i>
+
+                                    </div>
+
+                                {% endif %}
+
+
+                                <div class="project-mobile-content">
+
+                                    <h5 class="fw-bold mb-1">
+
+                                        {{ project.title }}
+
+                                    </h5>
+
+                                    <p class="text-muted small mb-0">
+
+                                        {{ project.short_description|truncatechars:70 }}
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- Project Information -->
+
+                        <div class="dashboard-mobile-details">
+
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Technologies
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    {{ project.technologies|truncatechars:80 }}
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Featured
+                                </span>
+
+                                <span>
+
+                                    {% if project.featured %}
+
+                                        <span class="badge bg-success">
+                                            Featured
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+                                            No
+                                        </span>
+
+                                    {% endif %}
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Created
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    {{ project.created_at|date:"d M Y" }}
+
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- Mobile Actions -->
+
+                        <div class="dashboard-mobile-actions">
+
+                            <a
+                                href="{% url 'dashboard:project_update' project.id %}"
+                                class="btn btn-outline-primary"
+                            >
+
+                                <i class="bi bi-pencil me-1"></i>
+
+                                Edit
+
+                            </a>
+
+
+                            <a
+                                href="{% url 'dashboard:project_delete' project.id %}"
+                                class="btn btn-outline-danger"
+                            >
+
+                                <i class="bi bi-trash me-1"></i>
+
+                                Delete
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+
+                <!-- =========================================
+                     Empty State
+                ========================================== -->
+
+                <div class="text-center py-5 px-4 dashboard-empty-state">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-folder-x
+                                  display-4
+                                  text-muted">
+                        </i>
+
+                    </div>
+
+
+                    <h4 class="fw-bold mb-2">
+                        No Projects Found
+                    </h4>
+
+
+                    <p class="text-muted mb-4">
+
+                        You haven't added any portfolio
+                        projects yet.
+
+                    </p>
+
+
+                    <a
+                        href="{% url 'dashboard:project_create' %}"
+                        class="btn btn-primary px-4"
+                    >
+
+                        <i class="bi bi-plus-lg me-2"></i>
+
+                        Add Your First Project
+
+                    </a>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         Back to Dashboard
+    ========================================== -->
+
+    <div class="mt-4">
+
+        <a
+            href="{% url 'dashboard:home' %}"
+            class="btn btn-outline-secondary dashboard-back-btn"
+        >
+
+            <i class="bi bi-arrow-left me-2"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

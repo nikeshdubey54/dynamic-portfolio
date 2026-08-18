@@ -1,0 +1,605 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Manage Services | Dashboard
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container py-5 dashboard-page">
+
+    <!-- =========================
+         Page Header
+    ========================== -->
+
+    <div class="dashboard-header
+                d-flex flex-column flex-md-row
+                justify-content-between
+                align-items-md-center
+                mb-4">
+
+        <div>
+
+            <h1 class="fw-bold mb-2">
+                Manage Services
+            </h1>
+
+            <p class="text-muted mb-0">
+                Create, update and manage your portfolio services.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-header-actions mt-3 mt-md-0">
+
+            <a
+                href="{% url 'dashboard:service_create' %}"
+                class="btn btn-primary px-4"
+            >
+
+                <i class="bi bi-plus-lg me-2"></i>
+
+                Add New Service
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Services Management Card
+    ========================== -->
+
+    <div class="card border-0 shadow-sm dashboard-management-card">
+
+        <div class="card-body p-0">
+
+            {% if services %}
+
+                <!-- =========================================
+                     DESKTOP TABLE
+                ========================================== -->
+
+                <div class="dashboard-table-wrapper">
+
+                    <table class="table table-hover
+                                  align-middle
+                                  dashboard-table">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th class="px-4 py-3">
+                                    Service
+                                </th>
+
+                                <th>
+                                    Featured
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Order
+                                </th>
+
+                                <th>
+                                    Created
+                                </th>
+
+                                <th class="text-end px-4">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            {% for service in services %}
+
+                            <tr>
+
+                                <!-- Service -->
+
+                                <td class="px-4">
+
+                                    <div class="service-info">
+
+                                        {% if service.image %}
+
+                                            <img
+                                                src="{{ service.image.url }}"
+                                                alt="{{ service.title }}"
+                                                class="dashboard-service-thumbnail"
+                                            >
+
+                                        {% else %}
+
+                                            <div class="dashboard-service-placeholder">
+
+                                                {% if service.icon %}
+
+                                                    <i class="{{ service.icon }}
+                                                              text-primary
+                                                              fs-4">
+                                                    </i>
+
+                                                {% else %}
+
+                                                    <i class="bi bi-briefcase
+                                                              text-muted
+                                                              fs-4">
+                                                    </i>
+
+                                                {% endif %}
+
+                                            </div>
+
+                                        {% endif %}
+
+
+                                        <div class="service-content">
+
+                                            <h6 class="fw-semibold">
+
+                                                {{ service.title }}
+
+                                            </h6>
+
+                                            <small class="text-muted">
+
+                                                {{ service.short_description|truncatechars:60 }}
+
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <!-- Featured -->
+
+                                <td>
+
+                                    {% if service.featured %}
+
+                                        <span class="badge bg-success">
+
+                                            <i class="bi bi-star-fill me-1"></i>
+
+                                            Featured
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+
+                                            No
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <!-- Status -->
+
+                                <td>
+
+                                    {% if service.is_active %}
+
+                                        <span class="badge bg-success">
+
+                                            <i class="bi bi-check-circle me-1"></i>
+
+                                            Active
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+
+                                            Inactive
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <!-- Order -->
+
+                                <td>
+
+                                    <span class="badge
+                                                 bg-light
+                                                 text-dark
+                                                 border">
+
+                                        {{ service.order }}
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- Created -->
+
+                                <td>
+
+                                    <small class="text-muted">
+
+                                        {{ service.created_at|date:"d M Y" }}
+
+                                    </small>
+
+                                </td>
+
+
+                                <!-- Actions -->
+
+                                <td class="text-end px-4">
+
+                                    <div class="d-inline-flex gap-2">
+
+                                        <a
+                                            href="{% url 'dashboard:service_update' service.id %}"
+                                            class="btn btn-sm btn-outline-primary"
+                                            title="Edit Service"
+                                        >
+
+                                            <i class="bi bi-pencil"></i>
+
+                                        </a>
+
+
+                                        <a
+                                            href="{% url 'dashboard:service_delete' service.id %}"
+                                            class="btn btn-sm btn-outline-danger"
+                                            title="Delete Service"
+                                        >
+
+                                            <i class="bi bi-trash"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =========================================
+                     MOBILE SERVICE LIST
+                ========================================== -->
+
+                <div class="dashboard-mobile-list">
+
+                    {% for service in services %}
+
+                    <div class="dashboard-mobile-card service-mobile-card">
+
+                        <!-- Mobile Header -->
+
+                        <div class="service-mobile-header">
+
+                            <div class="service-mobile-info">
+
+                                {% if service.image %}
+
+                                    <img
+                                        src="{{ service.image.url }}"
+                                        alt="{{ service.title }}"
+                                        class="dashboard-service-mobile-image"
+                                    >
+
+                                {% else %}
+
+                                    <div class="dashboard-service-mobile-placeholder">
+
+                                        {% if service.icon %}
+
+                                            <i class="{{ service.icon }}
+                                                      text-primary
+                                                      fs-4">
+                                            </i>
+
+                                        {% else %}
+
+                                            <i class="bi bi-briefcase
+                                                      text-muted
+                                                      fs-4">
+                                            </i>
+
+                                        {% endif %}
+
+                                    </div>
+
+                                {% endif %}
+
+
+                                <div class="service-mobile-content">
+
+                                    <h5 class="fw-semibold">
+
+                                        {{ service.title }}
+
+                                    </h5>
+
+                                    <p class="text-muted">
+
+                                        {{ service.short_description }}
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mobile Details -->
+
+                        <div class="dashboard-mobile-details">
+
+                            <!-- Featured -->
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Featured
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    {% if service.featured %}
+
+                                        <span class="badge bg-success">
+
+                                            <i class="bi bi-star-fill me-1"></i>
+
+                                            Featured
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+
+                                            No
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- Status -->
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Status
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    {% if service.is_active %}
+
+                                        <span class="badge bg-success">
+
+                                            <i class="bi bi-check-circle me-1"></i>
+
+                                            Active
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+
+                                            Inactive
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- Order -->
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Display Order
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    <span class="badge
+                                                 bg-light
+                                                 text-dark
+                                                 border">
+
+                                        {{ service.order }}
+
+                                    </span>
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- Created -->
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+                                    Created
+                                </span>
+
+                                <span class="dashboard-mobile-value">
+
+                                    {{ service.created_at|date:"d M Y" }}
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mobile Actions -->
+
+                        <div class="dashboard-mobile-actions">
+
+                            <a
+                                href="{% url 'dashboard:service_update' service.id %}"
+                                class="btn btn-outline-primary"
+                            >
+
+                                <i class="bi bi-pencil me-1"></i>
+
+                                Edit
+
+                            </a>
+
+
+                            <a
+                                href="{% url 'dashboard:service_delete' service.id %}"
+                                class="btn btn-outline-danger"
+                            >
+
+                                <i class="bi bi-trash me-1"></i>
+
+                                Delete
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <!-- =========================
+                     Empty State
+                ========================== -->
+
+                <div class="text-center
+                            py-5
+                            px-4
+                            dashboard-empty-state">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-briefcase
+                                  display-4
+                                  text-muted">
+                        </i>
+
+                    </div>
+
+
+                    <h4 class="fw-bold mb-2">
+
+                        No Services Found
+
+                    </h4>
+
+
+                    <p class="text-muted mb-4">
+
+                        You haven't added any services yet.
+
+                    </p>
+
+
+                    <a
+                        href="{% url 'dashboard:service_create' %}"
+                        class="btn btn-primary px-4"
+                    >
+
+                        <i class="bi bi-plus-lg me-2"></i>
+
+                        Add Your First Service
+
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Back to Dashboard
+    ========================== -->
+
+    <div class="mt-4">
+
+        <a
+            href="{% url 'dashboard:home' %}"
+            class="btn btn-outline-secondary dashboard-back-btn"
+        >
+
+            <i class="bi bi-arrow-left me-2"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

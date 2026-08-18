@@ -1,0 +1,392 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+{{ page_title }} | Dashboard
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container py-5 dashboard-page">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-9">
+
+            <!-- =========================
+                 Page Header
+            ========================== -->
+
+            <div class="mb-4">
+
+                <h1 class="fw-bold mb-2">
+                    {{ page_title }}
+                </h1>
+
+                <p class="text-muted mb-0">
+
+                    {% if post %}
+
+                        Update the details of your blog post.
+
+                    {% else %}
+
+                        Add a new blog post to your portfolio.
+
+                    {% endif %}
+
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 Blog Form Card
+            ========================== -->
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <form method="POST"
+                          enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+
+                        <!-- Form Errors -->
+
+                        {% if form.non_field_errors %}
+
+                            <div class="alert alert-danger">
+
+                                {{ form.non_field_errors }}
+
+                            </div>
+
+                        {% endif %}
+
+
+                        <!-- Title -->
+
+                        <div class="mb-4">
+
+                            <label for="{{ form.title.id_for_label }}"
+                                   class="form-label fw-semibold">
+
+                                Title
+
+                            </label>
+
+                            {{ form.title }}
+
+                            {% for error in form.title.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Slug -->
+
+                        <div class="mb-4">
+
+                            <label for="{{ form.slug.id_for_label }}"
+                                   class="form-label fw-semibold">
+
+                                Slug
+
+                            </label>
+
+                            {{ form.slug }}
+
+                            <div class="form-text">
+
+                                Example:
+                                <code>learning-django-rest-framework</code>
+
+                            </div>
+
+                            {% for error in form.slug.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Short Description -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.short_description.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+
+                                Short Description
+
+                            </label>
+
+                            {{ form.short_description }}
+
+                            {% for error in form.short_description.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Content -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.content.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+
+                                Blog Content
+
+                            </label>
+
+                            {{ form.content }}
+
+                            <div class="form-text">
+
+                                Write the complete content of your blog post.
+
+                            </div>
+
+                            {% for error in form.content.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Image -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.image.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+
+                                Featured Image
+
+                            </label>
+
+                            {{ form.image }}
+
+                            {% if post and post.image %}
+
+                                <div class="mt-3">
+
+                                    <p class="small text-muted mb-2">
+                                        Current Image
+                                    </p>
+
+                                    <img
+                                        src="{{ post.image.url }}"
+                                        alt="{{ post.title }}"
+                                        class="rounded"
+                                        style="
+                                            width: 180px;
+                                            height: 110px;
+                                            object-fit: cover;
+                                        "
+                                    >
+
+                                </div>
+
+                            {% endif %}
+
+                            {% for error in form.image.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Author -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.author.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+
+                                Author
+
+                            </label>
+
+                            {{ form.author }}
+
+                            {% for error in form.author.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Category -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.category.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+
+                                Category
+
+                            </label>
+
+                            {{ form.category }}
+
+                            <div class="form-text">
+
+                                Example: Python, Django, Web Development
+
+                            </div>
+
+                            {% for error in form.category.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Featured + Active -->
+
+                        <div class="row mb-4">
+
+                            <div class="col-md-6">
+
+                                <div class="form-check">
+
+                                    {{ form.featured }}
+
+                                    <label
+                                        class="form-check-label fw-semibold"
+                                        for="{{ form.featured.id_for_label }}"
+                                    >
+
+                                        Featured Post
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-6 mt-3 mt-md-0">
+
+                                <div class="form-check">
+
+                                    {{ form.is_active }}
+
+                                    <label
+                                        class="form-check-label fw-semibold"
+                                        for="{{ form.is_active.id_for_label }}"
+                                    >
+
+                                        Active Post
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Buttons -->
+
+                        <div class="d-flex
+                                    flex-column
+                                    flex-sm-row
+                                    justify-content-between
+                                    gap-2
+                                    pt-3
+                                    border-top">
+
+                            <a
+                                href="{% url 'dashboard:blog_list' %}"
+                                class="btn btn-outline-secondary px-4"
+                            >
+
+                                <i class="bi bi-arrow-left me-2"></i>
+
+                                Cancel
+
+                            </a>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary px-4"
+                            >
+
+                                <i class="bi bi-check-lg me-2"></i>
+
+                                {{ submit_text }}
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

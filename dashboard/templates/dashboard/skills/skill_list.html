@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Manage Skills | Dashboard
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid container-xl py-4 py-lg-5 dashboard-page">
+
+    <!-- =========================================
+         Page Header
+    ========================================== -->
+
+    <div class="dashboard-header
+                d-flex
+                flex-column flex-md-row
+                justify-content-between
+                align-items-start
+                align-items-md-center
+                gap-3
+                mb-4">
+
+        <div>
+
+            <h1 class="fw-bold mb-2">
+                Manage Skills
+            </h1>
+
+            <p class="text-muted mb-0">
+                Create, update and manage your technical skills.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-header-actions">
+
+            <a href="{% url 'dashboard:skill_create' %}"
+               class="btn btn-primary px-4 dashboard-action-btn">
+
+                <i class="bi bi-plus-lg me-2"></i>
+
+                Add New Skill
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         Skills Management Card
+    ========================================== -->
+
+    <div class="card dashboard-management-card border-0 shadow-sm">
+
+        <div class="card-body p-0">
+
+            {% if skills %}
+
+
+                <!-- =========================================
+                     Desktop / Tablet Table
+                ========================================== -->
+
+                <div class="table-responsive dashboard-table-wrapper">
+
+                    <table class="table table-hover align-middle mb-0 dashboard-table">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th class="px-4 py-3">
+                                    Skill
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Proficiency
+                                </th>
+
+                                <th>
+                                    Icon
+                                </th>
+
+                                <th class="text-end px-4">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            {% for skill in skills %}
+
+                            <tr>
+
+                                <!-- Skill -->
+
+                                <td class="px-4">
+
+                                    <div class="d-flex align-items-center skill-info">
+
+                                        <div class="dashboard-skill-icon">
+
+                                            {% if skill.icon %}
+
+                                                <i class="{{ skill.icon }} text-primary"></i>
+
+                                            {% else %}
+
+                                                <i class="bi bi-code-slash text-muted"></i>
+
+                                            {% endif %}
+
+                                        </div>
+
+
+                                        <div class="skill-content">
+
+                                            <h6 class="fw-semibold mb-0">
+
+                                                {{ skill.name }}
+
+                                            </h6>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <!-- Category -->
+
+                                <td>
+
+                                    <span class="badge bg-light text-dark border">
+
+                                        {{ skill.category }}
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- Proficiency -->
+
+                                <td class="skill-proficiency-cell">
+
+                                    <div class="d-flex
+                                                align-items-center
+                                                gap-2">
+
+                                        <div class="progress flex-grow-1">
+
+                                            <div class="progress-bar"
+                                                 role="progressbar"
+                                                 style="width: {{ skill.proficiency }}%;"
+                                                 aria-valuenow="{{ skill.proficiency }}"
+                                                 aria-valuemin="0"
+                                                 aria-valuemax="100">
+                                            </div>
+
+                                        </div>
+
+                                        <small class="text-muted skill-percentage">
+
+                                            {{ skill.proficiency }}%
+
+                                        </small>
+
+                                    </div>
+
+                                </td>
+
+
+                                <!-- Icon -->
+
+                                <td>
+
+                                    {% if skill.icon %}
+
+                                        <code class="skill-icon-code">
+
+                                            {{ skill.icon }}
+
+                                        </code>
+
+                                    {% else %}
+
+                                        <span class="text-muted">
+                                            —
+                                        </span>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <!-- Actions -->
+
+                                <td class="text-end px-4">
+
+                                    <div class="d-inline-flex gap-2">
+
+                                        <a href="{% url 'dashboard:skill_update' skill.id %}"
+                                           class="btn btn-sm btn-outline-primary"
+                                           title="Edit Skill">
+
+                                            <i class="bi bi-pencil"></i>
+
+                                        </a>
+
+
+                                        <a href="{% url 'dashboard:skill_delete' skill.id %}"
+                                           class="btn btn-sm btn-outline-danger"
+                                           title="Delete Skill">
+
+                                            <i class="bi bi-trash"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =========================================
+                     Mobile Skill Cards
+                ========================================== -->
+
+                <div class="dashboard-mobile-list">
+
+                    {% for skill in skills %}
+
+                    <div class="dashboard-mobile-card skill-mobile-card">
+
+
+                        <!-- Skill Header -->
+
+                        <div class="skill-mobile-header">
+
+                            <div class="skill-mobile-info">
+
+
+                                <!-- Icon -->
+
+                                <div class="dashboard-skill-mobile-icon">
+
+                                    {% if skill.icon %}
+
+                                        <i class="{{ skill.icon }} text-primary"></i>
+
+                                    {% else %}
+
+                                        <i class="bi bi-code-slash text-muted"></i>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Name -->
+
+                                <div class="skill-mobile-content">
+
+                                    <h5 class="fw-bold mb-1">
+
+                                        {{ skill.name }}
+
+                                    </h5>
+
+                                    <span class="badge bg-light text-dark border">
+
+                                        {{ skill.category }}
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Skill Details -->
+
+                        <div class="dashboard-mobile-details">
+
+
+                            <!-- Proficiency -->
+
+                            <div class="skill-mobile-proficiency">
+
+                                <div class="d-flex
+                                            justify-content-between
+                                            align-items-center
+                                            mb-2">
+
+                                    <span class="dashboard-mobile-label">
+
+                                        Proficiency
+
+                                    </span>
+
+                                    <span class="skill-mobile-percentage">
+
+                                        {{ skill.proficiency }}%
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="progress skill-mobile-progress">
+
+                                    <div class="progress-bar"
+                                         role="progressbar"
+                                         style="width: {{ skill.proficiency }}%;"
+                                         aria-valuenow="{{ skill.proficiency }}"
+                                         aria-valuemin="0"
+                                         aria-valuemax="100">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Icon Class -->
+
+                            <div class="dashboard-mobile-detail">
+
+                                <span class="dashboard-mobile-label">
+
+                                    Icon
+
+                                </span>
+
+                                <span class="dashboard-mobile-value skill-mobile-icon">
+
+                                    {% if skill.icon %}
+
+                                        <code>
+                                            {{ skill.icon }}
+                                        </code>
+
+                                    {% else %}
+
+                                        —
+
+                                    {% endif %}
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mobile Actions -->
+
+                        <div class="dashboard-mobile-actions">
+
+                            <a href="{% url 'dashboard:skill_update' skill.id %}"
+                               class="btn btn-outline-primary">
+
+                                <i class="bi bi-pencil me-1"></i>
+
+                                Edit
+
+                            </a>
+
+
+                            <a href="{% url 'dashboard:skill_delete' skill.id %}"
+                               class="btn btn-outline-danger">
+
+                                <i class="bi bi-trash me-1"></i>
+
+                                Delete
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+
+                <!-- =========================================
+                     Empty State
+                ========================================== -->
+
+                <div class="text-center
+                            py-5
+                            px-4
+                            dashboard-empty-state">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-code-slash
+                                  display-4
+                                  text-muted">
+                        </i>
+
+                    </div>
+
+
+                    <h4 class="fw-bold mb-2">
+
+                        No Skills Found
+
+                    </h4>
+
+
+                    <p class="text-muted mb-4">
+
+                        You haven't added any technical skills yet.
+
+                    </p>
+
+
+                    <a href="{% url 'dashboard:skill_create' %}"
+                       class="btn btn-primary px-4">
+
+                        <i class="bi bi-plus-lg me-2"></i>
+
+                        Add Your First Skill
+
+                    </a>
+
+                </div>
+
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         Back to Dashboard
+    ========================================== -->
+
+    <div class="mt-4">
+
+        <a href="{% url 'dashboard:home' %}"
+           class="btn btn-outline-secondary dashboard-back-btn">
+
+            <i class="bi bi-arrow-left me-2"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -12,22 +12,40 @@
         Navbar
 ========================== */
 
-    .navbar-collapse{
+    .navbar-collapse {
+        background: rgba(15,23,42,.96);
 
-        background:rgba(15,23,42,.96);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
 
-        backdrop-filter:blur(14px);
+        border-radius: 18px;
 
-        -webkit-backdrop-filter:blur(14px);
+        margin-top: 18px;
 
-        border-radius:18px;
+        padding: 20px;
 
-        margin-top:18px;
+        box-shadow: 0 15px 40px rgba(0,0,0,.20);
 
-        padding:20px;
+        /* Mobile menu scrolling */
+        max-height: calc(100vh - 100px);
 
-        box-shadow:0 15px 40px rgba(0,0,0,.20);
+        overflow-y: auto;
+        overflow-x: hidden;
 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar-collapse::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,.25);
+        border-radius: 10px;
     }
 
     .navbar-nav{

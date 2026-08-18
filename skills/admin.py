@@ -18,3 +18,8 @@ class SkillAdmin(admin.ModelAdmin):
     search_fields = (
         'name',
     )
+
+    ordering = (
+        'category',
+        'name',
+    )
