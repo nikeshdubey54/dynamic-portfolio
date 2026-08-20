@@ -2427,7 +2427,56 @@ Featured Blog
     font-size: 0.9rem;
 }
 
+.skill-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.skill-icon {
+    font-size: 1.5rem;
+    color: inherit;
+}
 
+.skill-icon.fa-html5 {
+    color: #E34F26;
+}
+
+.skill-icon.fa-css3-alt {
+    color: #1572B6;
+}
+
+.skill-icon.fa-js {
+    color: #F7DF1E;
+}
+
+.skill-icon.fa-react {
+    color: #61DAFB;
+}
+
+.skill-icon.fa-python {
+    color: #3776AB;
+}
+
+.skill-icon.fa-django {
+    color: #092E20;
+}
+
+.skill-icon.fa-database {
+    color: #4479A1;
+}
+
+.skill-icon.fa-code {
+    color: #007ACC;
+}
+
+.skill-icon.fa-git-alt {
+    color: #F05032;
+}
+
+.skill-icon.fa-github {
+    color: #181717;
+}
 
 
 
