@@ -10,6 +10,8 @@ Skills | Dynamic Portfolio
 
     <div class="container">
 
+        <!-- Page Heading -->
+
         <h1 class="section-title skills-title text-center">
 
             My Skills
@@ -21,8 +23,11 @@ Skills | Dynamic Portfolio
             Technologies I use to build modern, scalable and responsive web applications.
 
         </p>
-        
-        <!-- Frontend -->
+
+
+        <!-- =========================
+             Frontend Development
+        ========================== -->
 
         <div class="skill-category-header mb-4">
 
@@ -40,23 +45,46 @@ Skills | Dynamic Portfolio
 
         </div>
 
+
         <div class="row mb-5">
 
             {% for skill in frontend_skills %}
 
             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex">
+
                 <div class="card skill-card shadow-sm h-100">
 
                     <div class="card-body skill-card-body">
 
-                        <h5>{{ skill.name }}</h5>
+                        <h5 class="skill-title">
 
-                        <div class="progress mt-3">
+                            {{ skill.name }}
 
-                            <div class="progress-bar"
-                                style="width: {{ skill.proficiency }}%;">
+                        </h5>
+
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span class="skill-level">
+
+                                Proficiency
+
+                            </span>
+
+                            <span class="skill-percent">
 
                                 {{ skill.proficiency }}%
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div class="progress-bar skill-progress"
+
+                                 style="width: {{ skill.proficiency }}%;">
 
                             </div>
 
@@ -76,7 +104,10 @@ Skills | Dynamic Portfolio
 
         </div>
 
-        <!-- Backend -->
+
+        <!-- =========================
+             Backend Development
+        ========================== -->
 
         <div class="skill-category-header mb-4">
 
@@ -94,6 +125,7 @@ Skills | Dynamic Portfolio
 
         </div>
 
+
         <div class="row mb-5">
 
             {% for skill in backend_skills %}
@@ -109,6 +141,7 @@ Skills | Dynamic Portfolio
                             {{ skill.name }}
 
                         </h5>
+
 
                         <div class="d-flex justify-content-between mb-2">
 
@@ -126,11 +159,12 @@ Skills | Dynamic Portfolio
 
                         </div>
 
+
                         <div class="progress">
 
                             <div class="progress-bar skill-progress"
 
-                                style="width: {{ skill.proficiency }}%;">
+                                 style="width: {{ skill.proficiency }}%;">
 
                             </div>
 
@@ -150,7 +184,10 @@ Skills | Dynamic Portfolio
 
         </div>
 
-        <!-- Database -->
+
+        <!-- =========================
+             Database
+        ========================== -->
 
         <div class="skill-category-header mb-4">
 
@@ -168,6 +205,7 @@ Skills | Dynamic Portfolio
 
         </div>
 
+
         <div class="row mb-5">
 
             {% for skill in database_skills %}
@@ -178,14 +216,35 @@ Skills | Dynamic Portfolio
 
                     <div class="card-body skill-card-body">
 
-                        <h5>{{ skill.name }}</h5>
+                        <h5 class="skill-title">
 
-                        <div class="progress mt-3">
+                            {{ skill.name }}
 
-                            <div class="progress-bar"
-                                style="width: {{ skill.proficiency }}%;">
+                        </h5>
+
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span class="skill-level">
+
+                                Proficiency
+
+                            </span>
+
+                            <span class="skill-percent">
 
                                 {{ skill.proficiency }}%
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div class="progress-bar skill-progress"
+
+                                 style="width: {{ skill.proficiency }}%;">
 
                             </div>
 
@@ -205,25 +264,27 @@ Skills | Dynamic Portfolio
 
         </div>
 
-                <!-- Tools_skills -->
+
+        <!-- =========================
+             Tools
+        ========================== -->
 
         <div class="skill-category-header mb-4">
 
             <h2 class="skill-category-title">
+
                 Tools
+
             </h2>
 
             <p class="skill-category-subtitle">
+
                 Professional development tools.
-            </p>
-
-            <p class="skill-category-subtitle">
-
-                Server-side technologies and application logic.
 
             </p>
 
         </div>
+
 
         <div class="row mb-5">
 
@@ -241,6 +302,7 @@ Skills | Dynamic Portfolio
 
                         </h5>
 
+
                         <div class="d-flex justify-content-between mb-2">
 
                             <span class="skill-level">
@@ -257,11 +319,12 @@ Skills | Dynamic Portfolio
 
                         </div>
 
+
                         <div class="progress">
 
                             <div class="progress-bar skill-progress"
 
-                                style="width: {{ skill.proficiency }}%;">
+                                 style="width: {{ skill.proficiency }}%;">
 
                             </div>
 
@@ -281,159 +344,8 @@ Skills | Dynamic Portfolio
 
         </div>
 
-                <!-- Cloud -->
-
-        <div class="skill-category-header mb-4">
-
-            <h2 class="skill-category-title">
-                Cloud
-            </h2>
-
-            <p class="skill-category-subtitle">
-                Cloud platforms and deployment technologies.
-            </p>
-
-            <p class="skill-category-subtitle">
-
-                Server-side technologies and application logic.
-
-            </p>
-
-        </div>
-
-        <div class="row mb-5">
-
-            {% for skill in cloud_skills %}
-
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex">
-
-                <div class="card skill-card shadow-sm h-100">
-
-                    <div class="card-body skill-card-body">
-
-                        <h5 class="skill-title">
-
-                            {{ skill.name }}
-
-                        </h5>
-
-                        <div class="d-flex justify-content-between mb-2">
-
-                            <span class="skill-level">
-
-                                Proficiency
-
-                            </span>
-
-                            <span class="skill-percent">
-
-                                {{ skill.proficiency }}%
-
-                            </span>
-
-                        </div>
-
-                        <div class="progress">
-
-                            <div class="progress-bar skill-progress"
-
-                                style="width: {{ skill.proficiency }}%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            {% empty %}
-
-            <p>No Cloud Skills Added.</p>
-
-            {% endfor %}
-
-        </div>
-
-                <!-- Other_skills -->
-
-        <div class="skill-category-header mb-4">
-
-            <h2 class="skill-category-title">
-                Other Skills
-            </h2>
-
-            <p class="skill-category-subtitle">
-                Additional technologies and productivity skills.
-            </p>
-
-            <p class="skill-category-subtitle">
-
-                Server-side technologies and application logic.
-
-            </p>
-
-        </div>
-
-        <div class="row mb-5">
-
-            {% for skill in other_skills %}
-
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex">
-
-                <div class="card skill-card shadow-sm h-100">
-
-                    <div class="card-body skill-card-body">
-
-                        <h5 class="skill-title">
-
-                            {{ skill.name }}
-
-                        </h5>
-
-                        <div class="d-flex justify-content-between mb-2">
-
-                            <span class="skill-level">
-
-                                Proficiency
-
-                            </span>
-
-                            <span class="skill-percent">
-
-                                {{ skill.proficiency }}%
-
-                            </span>
-
-                        </div>
-
-                        <div class="progress">
-
-                            <div class="progress-bar skill-progress"
-
-                                style="width: {{ skill.proficiency }}%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            {% empty %}
-
-            <p>No Other Skills Added.</p>
-
-            {% endfor %}
-
-        </div>
-
     </div>
 
 </section>
+
 {% endblock %}

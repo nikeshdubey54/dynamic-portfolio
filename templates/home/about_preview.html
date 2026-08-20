@@ -6,34 +6,43 @@
 
             <div class="col-lg-6">
 
-                <img
-                    src="https://placehold.co/500x350"
-                    class="img-fluid rounded shadow"
-                    alt="About Me">
+                {% load static %}
+
+                <div class="about-image-wrapper text-center">
+
+                    <img
+                        src="{% static 'images/profile/profile3.jpeg' %}"
+                        class="about-profile-img"
+                        alt="Nikesh Dubey - Python Full Stack Developer"
+                        loading="lazy">
+
+                </div>
 
             </div>
 
             <div class="col-lg-6">
 
                 <h2 class="fw-bold mb-4">
-
                     About Me
-
                 </h2>
 
                 <p class="lead">
 
-                    I am a passionate Python Full Stack Developer who enjoys building modern and scalable web applications using Django, Python, MySQL, HTML, CSS, JavaScript and Bootstrap.
+                    I am a passionate Python Full Stack Developer who enjoys
+                    building modern and scalable web applications using
+                    Django, Python, MySQL, HTML, CSS, JavaScript and Bootstrap.
 
                 </p>
 
                 <p>
 
-                    I continuously improve my skills, learn new technologies and build professional projects that solve real-world problems.
+                    I continuously improve my skills, learn new technologies
+                    and build professional projects that solve real-world
+                    problems.
 
                 </p>
 
-                <a href="#"
+                <a href="/about/"
                    class="btn btn-primary">
 
                     Read More

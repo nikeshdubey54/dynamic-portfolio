@@ -600,6 +600,12 @@ h1{
 
 }
 
+.about-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-profile-img:hover{
 
     transform:translateY(-8px) scale(1.03);
