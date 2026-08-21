@@ -15,26 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path , include
+from django.urls import path, include, re_path
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from portfolio.sitemaps import StaticViewSitemap
 from django.views.generic import TemplateView
+from django.views.static import serve  # <--- Ye naya import hai
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include ('home.urls')),
+    path('', include('home.urls')),
     path('about/', include('about.urls')),
     path('skills/', include('skills.urls')),
     path('projects/', include('projects.urls')),
-    path('services/' , include('services.urls')),
-    path('contact/', include('contact.urls'),),
+    path('services/', include('services.urls')),
+    path('contact/', include('contact.urls')),
     path('blog/', include('blog.urls')),
-    path('resume/',include('resume.urls')),
+    path('resume/', include('resume.urls')),
     path('accounts/', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
-    path('sitemap.xml',sitemap,{'sitemaps': {'static': StaticViewSitemap}},name='django-sitemap',),
+    path('sitemap.xml', sitemap, {'sitemaps': {'static': StaticViewSitemap}}, name='django-sitemap'),
     path(
         'robots.txt',
         TemplateView.as_view(
@@ -43,9 +43,7 @@ urlpatterns = [
         ),
         name='robots.txt',
     ),
+    
+    # Live Site Media Serving Route
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
-
-urlpatterns += static(
-    settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT
-)
